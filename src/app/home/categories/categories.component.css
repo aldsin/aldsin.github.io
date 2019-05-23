@@ -1,0 +1,40 @@
+.row-category,
+.col-category {
+  display: flex;
+}
+
+.col-category {
+  width: 100%;
+  padding: 1%;
+  display: flex;
+}
+
+.col-category:first-child {
+  padding-left: 0;
+}
+
+.col-category:last-child {
+  padding-right: 0;
+}
+
+app-category {
+  height: 100%;
+  width: 100%;
+}
+
+
+@media (max-width:610px) {
+  .col-category {
+    width: 50%;
+  }
+  .row-category {
+    flex-wrap: wrap;
+  }
+
+  .col-category:nth-child(odd) {
+    padding-left: 0;
+  }
+  .col-category:nth-child(even) {
+    padding-right: 0;
+  }
+}

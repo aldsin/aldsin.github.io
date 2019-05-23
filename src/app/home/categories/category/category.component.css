@@ -1,0 +1,7 @@
+mat-card {
+  height: 100%;
+}
+
+.card-content {
+  word-wrap: break-word;
+}
