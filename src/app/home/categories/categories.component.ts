@@ -13,6 +13,8 @@ export interface Category {
 export class CategoriesComponent implements OnInit {
   categories: Category[];
   topCategories: Category[];
+  filteredCategories: Category[];
+  moreCategories = false;
 
   constructor() {}
 
@@ -26,6 +28,17 @@ export class CategoriesComponent implements OnInit {
       { name: 'Test6', description: 'Description Description 6' },
       { name: 'Test7', description: 'Description Description 7' }
     ];
-    this.topCategories = this.categories.slice(0, 4);
+    this.filteredCategories = this.categories.slice();
+    this.topCategories = this.filteredCategories.slice(0, 4);
+  }
+
+  changeCategoryView(isMoreNeeded: boolean) {
+    if (isMoreNeeded) {
+      this.moreCategories = true;
+      this.topCategories = this.filteredCategories.slice();
+    } else {
+      this.moreCategories = false;
+      this.topCategories = this.filteredCategories.slice(0, 4);
+    }
   }
 }

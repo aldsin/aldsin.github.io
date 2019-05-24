@@ -1,3 +1,16 @@
+<mat-toolbar>
+  <mat-toolbar-row>
+    <span>Categories</span>
+    <span class="spacer"></span>
+    <button mat-raised-button color="primary" (click)="changeCategoryView(true)" *ngIf="!moreCategories">
+      More<mat-icon>expand_more</mat-icon>
+    </button>
+    <button mat-raised-button color="primary" (click)="changeCategoryView(false)" *ngIf="moreCategories">
+      Less<mat-icon>expand_less</mat-icon>
+    </button>
+  </mat-toolbar-row>
+</mat-toolbar>
+
 <div class="row-category">
   <div class="col-category" *ngFor="let category of topCategories">
     <app-category [category]="category"></app-category>

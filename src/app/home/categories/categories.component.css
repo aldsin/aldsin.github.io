@@ -1,19 +1,19 @@
 .row-category,
 .col-category {
   display: flex;
+  flex-wrap: wrap;
 }
 
 .col-category {
-  width: 100%;
+  width: 25%;
   padding: 1%;
   display: flex;
 }
 
-.col-category:first-child {
+.col-category:nth-child(4n+1) {
   padding-left: 0;
 }
-
-.col-category:last-child {
+.col-category:nth-child(4n) {
   padding-right: 0;
 }
 
@@ -22,13 +22,17 @@ app-category {
   width: 100%;
 }
 
+.spacer {
+  flex: 1 1 auto;
+}
 
-@media (max-width:610px) {
+mat-toolbar-row button {
+  width: 90px;
+}
+
+@media (max-width: 610px) {
   .col-category {
     width: 50%;
-  }
-  .row-category {
-    flex-wrap: wrap;
   }
 
   .col-category:nth-child(odd) {

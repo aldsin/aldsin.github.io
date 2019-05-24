@@ -8,21 +8,12 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { CategoriesComponent } from './home/categories/categories.component';
 import { CategoryComponent } from './home/categories/category/category.component';
+import { FeaturedAlgoComponent } from './home/featured-algo/featured-algo.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    HomeComponent,
-    CategoriesComponent,
-    CategoryComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    AppMaterialModule
-  ],
+  declarations: [AppComponent, HomeComponent, CategoriesComponent, CategoryComponent, FeaturedAlgoComponent],
+  imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule, AppMaterialModule],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}
