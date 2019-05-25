@@ -47,7 +47,7 @@ var AppRoutingModule = /** @class */ (function () {
     }
     AppRoutingModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
-            imports: [_angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"].forRoot(routes, { useHash: true })],
+            imports: [_angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"].forRoot(routes)],
             exports: [_angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"]]
         })
     ], AppRoutingModule);
@@ -204,11 +204,21 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./app-routing.module */ "./src/app/app-routing.module.ts");
 /* harmony import */ var _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/platform-browser/animations */ "./node_modules/@angular/platform-browser/fesm5/animations.js");
 /* harmony import */ var _app_material_module__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./app.material.module */ "./src/app/app.material.module.ts");
-/* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
-/* harmony import */ var _home_home_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./home/home.component */ "./src/app/home/home.component.ts");
-/* harmony import */ var _home_categories_categories_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./home/categories/categories.component */ "./src/app/home/categories/categories.component.ts");
-/* harmony import */ var _home_categories_category_category_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./home/categories/category/category.component */ "./src/app/home/categories/category/category.component.ts");
-/* harmony import */ var _home_featured_algo_featured_algo_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./home/featured-algo/featured-algo.component */ "./src/app/home/featured-algo/featured-algo.component.ts");
+/* harmony import */ var _graphql_module__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./graphql.module */ "./src/app/graphql.module.ts");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+/* harmony import */ var apollo_angular__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! apollo-angular */ "./node_modules/apollo-angular/fesm5/ng.apollo.js");
+/* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
+/* harmony import */ var _home_home_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./home/home.component */ "./src/app/home/home.component.ts");
+/* harmony import */ var _home_categories_categories_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./home/categories/categories.component */ "./src/app/home/categories/categories.component.ts");
+/* harmony import */ var _home_categories_category_category_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./home/categories/category/category.component */ "./src/app/home/categories/category/category.component.ts");
+/* harmony import */ var _home_featured_algo_featured_algo_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./home/featured-algo/featured-algo.component */ "./src/app/home/featured-algo/featured-algo.component.ts");
+/* harmony import */ var apollo_angular_link_http__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! apollo-angular-link-http */ "./node_modules/apollo-angular-link-http/fesm5/ng.apolloLink.http.js");
+/* harmony import */ var apollo_cache_inmemory__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! apollo-cache-inmemory */ "./node_modules/apollo-cache-inmemory/lib/bundle.esm.js");
+
+
+
+
+
 
 
 
@@ -225,13 +235,76 @@ var AppModule = /** @class */ (function () {
     }
     AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["NgModule"])({
-            declarations: [_app_component__WEBPACK_IMPORTED_MODULE_6__["AppComponent"], _home_home_component__WEBPACK_IMPORTED_MODULE_7__["HomeComponent"], _home_categories_categories_component__WEBPACK_IMPORTED_MODULE_8__["CategoriesComponent"], _home_categories_category_category_component__WEBPACK_IMPORTED_MODULE_9__["CategoryComponent"], _home_featured_algo_featured_algo_component__WEBPACK_IMPORTED_MODULE_10__["FeaturedAlgoComponent"]],
-            imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"], _app_routing_module__WEBPACK_IMPORTED_MODULE_3__["AppRoutingModule"], _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_4__["BrowserAnimationsModule"], _app_material_module__WEBPACK_IMPORTED_MODULE_5__["AppMaterialModule"]],
-            providers: [],
-            bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_6__["AppComponent"]]
+            declarations: [_app_component__WEBPACK_IMPORTED_MODULE_9__["AppComponent"], _home_home_component__WEBPACK_IMPORTED_MODULE_10__["HomeComponent"], _home_categories_categories_component__WEBPACK_IMPORTED_MODULE_11__["CategoriesComponent"], _home_categories_category_category_component__WEBPACK_IMPORTED_MODULE_12__["CategoryComponent"], _home_featured_algo_featured_algo_component__WEBPACK_IMPORTED_MODULE_13__["FeaturedAlgoComponent"]],
+            imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"], _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_4__["BrowserAnimationsModule"], _app_material_module__WEBPACK_IMPORTED_MODULE_5__["AppMaterialModule"], _graphql_module__WEBPACK_IMPORTED_MODULE_6__["GraphQLModule"], _angular_common_http__WEBPACK_IMPORTED_MODULE_7__["HttpClientModule"], apollo_angular__WEBPACK_IMPORTED_MODULE_8__["ApolloModule"], _app_routing_module__WEBPACK_IMPORTED_MODULE_3__["AppRoutingModule"]],
+            providers: [
+                {
+                    provide: apollo_angular__WEBPACK_IMPORTED_MODULE_8__["APOLLO_OPTIONS"],
+                    useFactory: function (httpLink) {
+                        return {
+                            cache: new apollo_cache_inmemory__WEBPACK_IMPORTED_MODULE_15__["InMemoryCache"](),
+                            link: httpLink.create({
+                                uri: 'https://algods.herokuapp.com/graphql'
+                            })
+                        };
+                    },
+                    deps: [apollo_angular_link_http__WEBPACK_IMPORTED_MODULE_14__["HttpLink"]]
+                }
+            ],
+            bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_9__["AppComponent"]]
         })
     ], AppModule);
     return AppModule;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/graphql.module.ts":
+/*!***********************************!*\
+  !*** ./src/app/graphql.module.ts ***!
+  \***********************************/
+/*! exports provided: createApollo, GraphQLModule */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createApollo", function() { return createApollo; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GraphQLModule", function() { return GraphQLModule; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var apollo_angular__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! apollo-angular */ "./node_modules/apollo-angular/fesm5/ng.apollo.js");
+/* harmony import */ var apollo_angular_link_http__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! apollo-angular-link-http */ "./node_modules/apollo-angular-link-http/fesm5/ng.apolloLink.http.js");
+/* harmony import */ var apollo_cache_inmemory__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! apollo-cache-inmemory */ "./node_modules/apollo-cache-inmemory/lib/bundle.esm.js");
+
+
+
+
+
+var uri = 'https://algods.herokuapp.com/graphql'; // <-- add the URL of the GraphQL server here
+function createApollo(httpLink) {
+    return {
+        link: httpLink.create({ uri: uri }),
+        cache: new apollo_cache_inmemory__WEBPACK_IMPORTED_MODULE_4__["InMemoryCache"]()
+    };
+}
+var GraphQLModule = /** @class */ (function () {
+    function GraphQLModule() {
+    }
+    GraphQLModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
+            exports: [apollo_angular__WEBPACK_IMPORTED_MODULE_2__["ApolloModule"], apollo_angular_link_http__WEBPACK_IMPORTED_MODULE_3__["HttpLinkModule"]],
+            providers: [
+                {
+                    provide: apollo_angular__WEBPACK_IMPORTED_MODULE_2__["APOLLO_OPTIONS"],
+                    useFactory: createApollo,
+                    deps: [apollo_angular_link_http__WEBPACK_IMPORTED_MODULE_3__["HttpLink"]]
+                }
+            ]
+        })
+    ], GraphQLModule);
+    return GraphQLModule;
 }());
 
 
@@ -245,7 +318,7 @@ var AppModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".row-category,\r\n.col-category {\r\n  display: flex;\r\n  flex-wrap: wrap;\r\n}\r\n\r\n.col-category {\r\n  width: 25%;\r\n  padding: 1%;\r\n  display: flex;\r\n}\r\n\r\n.col-category:nth-child(4n+1) {\r\n  padding-left: 0;\r\n}\r\n\r\n.col-category:nth-child(4n) {\r\n  padding-right: 0;\r\n}\r\n\r\napp-category {\r\n  height: 100%;\r\n  width: 100%;\r\n}\r\n\r\n.spacer {\r\n  flex: 1 1 auto;\r\n}\r\n\r\nmat-toolbar-row button {\r\n  width: 90px;\r\n}\r\n\r\n@media (max-width: 610px) {\r\n  .col-category {\r\n    width: 50%;\r\n  }\r\n\r\n  .col-category:nth-child(odd) {\r\n    padding-left: 0;\r\n  }\r\n  .col-category:nth-child(even) {\r\n    padding-right: 0;\r\n  }\r\n}\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvaG9tZS9jYXRlZ29yaWVzL2NhdGVnb3JpZXMuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTs7RUFFRSxhQUFhO0VBQ2IsZUFBZTtBQUNqQjs7QUFFQTtFQUNFLFVBQVU7RUFDVixXQUFXO0VBQ1gsYUFBYTtBQUNmOztBQUVBO0VBQ0UsZUFBZTtBQUNqQjs7QUFDQTtFQUNFLGdCQUFnQjtBQUNsQjs7QUFFQTtFQUNFLFlBQVk7RUFDWixXQUFXO0FBQ2I7O0FBRUE7RUFDRSxjQUFjO0FBQ2hCOztBQUVBO0VBQ0UsV0FBVztBQUNiOztBQUVBO0VBQ0U7SUFDRSxVQUFVO0VBQ1o7O0VBRUE7SUFDRSxlQUFlO0VBQ2pCO0VBQ0E7SUFDRSxnQkFBZ0I7RUFDbEI7QUFDRiIsImZpbGUiOiJzcmMvYXBwL2hvbWUvY2F0ZWdvcmllcy9jYXRlZ29yaWVzLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIucm93LWNhdGVnb3J5LFxyXG4uY29sLWNhdGVnb3J5IHtcclxuICBkaXNwbGF5OiBmbGV4O1xyXG4gIGZsZXgtd3JhcDogd3JhcDtcclxufVxyXG5cclxuLmNvbC1jYXRlZ29yeSB7XHJcbiAgd2lkdGg6IDI1JTtcclxuICBwYWRkaW5nOiAxJTtcclxuICBkaXNwbGF5OiBmbGV4O1xyXG59XHJcblxyXG4uY29sLWNhdGVnb3J5Om50aC1jaGlsZCg0bisxKSB7XHJcbiAgcGFkZGluZy1sZWZ0OiAwO1xyXG59XHJcbi5jb2wtY2F0ZWdvcnk6bnRoLWNoaWxkKDRuKSB7XHJcbiAgcGFkZGluZy1yaWdodDogMDtcclxufVxyXG5cclxuYXBwLWNhdGVnb3J5IHtcclxuICBoZWlnaHQ6IDEwMCU7XHJcbiAgd2lkdGg6IDEwMCU7XHJcbn1cclxuXHJcbi5zcGFjZXIge1xyXG4gIGZsZXg6IDEgMSBhdXRvO1xyXG59XHJcblxyXG5tYXQtdG9vbGJhci1yb3cgYnV0dG9uIHtcclxuICB3aWR0aDogOTBweDtcclxufVxyXG5cclxuQG1lZGlhIChtYXgtd2lkdGg6IDYxMHB4KSB7XHJcbiAgLmNvbC1jYXRlZ29yeSB7XHJcbiAgICB3aWR0aDogNTAlO1xyXG4gIH1cclxuXHJcbiAgLmNvbC1jYXRlZ29yeTpudGgtY2hpbGQob2RkKSB7XHJcbiAgICBwYWRkaW5nLWxlZnQ6IDA7XHJcbiAgfVxyXG4gIC5jb2wtY2F0ZWdvcnk6bnRoLWNoaWxkKGV2ZW4pIHtcclxuICAgIHBhZGRpbmctcmlnaHQ6IDA7XHJcbiAgfVxyXG59XHJcbiJdfQ== */"
+module.exports = ".form {\r\n  min-width: 150px;\r\n  max-width: 500px;\r\n  width: 100%;\r\n  margin: auto;\r\n}\r\n\r\n.row-category,\r\n.col-category {\r\n  display: flex;\r\n  flex-wrap: wrap;\r\n}\r\n\r\n.col-category {\r\n  width: 25%;\r\n  padding: 1%;\r\n  display: flex;\r\n}\r\n\r\n.col-category:nth-child(4n + 1) {\r\n  padding-left: 0;\r\n}\r\n\r\n.col-category:nth-child(4n) {\r\n  padding-right: 0;\r\n}\r\n\r\napp-category {\r\n  height: 100%;\r\n  width: 100%;\r\n}\r\n\r\n.spacer {\r\n  flex: 1 1 auto;\r\n}\r\n\r\nmat-toolbar-row button {\r\n  width: 90px;\r\n}\r\n\r\n@media (max-width: 610px) {\r\n  .col-category {\r\n    width: 50%;\r\n  }\r\n\r\n  .col-category:nth-child(odd) {\r\n    padding-left: 0;\r\n  }\r\n  .col-category:nth-child(even) {\r\n    padding-right: 0;\r\n  }\r\n}\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvaG9tZS9jYXRlZ29yaWVzL2NhdGVnb3JpZXMuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLGdCQUFnQjtFQUNoQixnQkFBZ0I7RUFDaEIsV0FBVztFQUNYLFlBQVk7QUFDZDs7QUFFQTs7RUFFRSxhQUFhO0VBQ2IsZUFBZTtBQUNqQjs7QUFFQTtFQUNFLFVBQVU7RUFDVixXQUFXO0VBQ1gsYUFBYTtBQUNmOztBQUVBO0VBQ0UsZUFBZTtBQUNqQjs7QUFDQTtFQUNFLGdCQUFnQjtBQUNsQjs7QUFFQTtFQUNFLFlBQVk7RUFDWixXQUFXO0FBQ2I7O0FBRUE7RUFDRSxjQUFjO0FBQ2hCOztBQUVBO0VBQ0UsV0FBVztBQUNiOztBQUVBO0VBQ0U7SUFDRSxVQUFVO0VBQ1o7O0VBRUE7SUFDRSxlQUFlO0VBQ2pCO0VBQ0E7SUFDRSxnQkFBZ0I7RUFDbEI7QUFDRiIsImZpbGUiOiJzcmMvYXBwL2hvbWUvY2F0ZWdvcmllcy9jYXRlZ29yaWVzLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuZm9ybSB7XHJcbiAgbWluLXdpZHRoOiAxNTBweDtcclxuICBtYXgtd2lkdGg6IDUwMHB4O1xyXG4gIHdpZHRoOiAxMDAlO1xyXG4gIG1hcmdpbjogYXV0bztcclxufVxyXG5cclxuLnJvdy1jYXRlZ29yeSxcclxuLmNvbC1jYXRlZ29yeSB7XHJcbiAgZGlzcGxheTogZmxleDtcclxuICBmbGV4LXdyYXA6IHdyYXA7XHJcbn1cclxuXHJcbi5jb2wtY2F0ZWdvcnkge1xyXG4gIHdpZHRoOiAyNSU7XHJcbiAgcGFkZGluZzogMSU7XHJcbiAgZGlzcGxheTogZmxleDtcclxufVxyXG5cclxuLmNvbC1jYXRlZ29yeTpudGgtY2hpbGQoNG4gKyAxKSB7XHJcbiAgcGFkZGluZy1sZWZ0OiAwO1xyXG59XHJcbi5jb2wtY2F0ZWdvcnk6bnRoLWNoaWxkKDRuKSB7XHJcbiAgcGFkZGluZy1yaWdodDogMDtcclxufVxyXG5cclxuYXBwLWNhdGVnb3J5IHtcclxuICBoZWlnaHQ6IDEwMCU7XHJcbiAgd2lkdGg6IDEwMCU7XHJcbn1cclxuXHJcbi5zcGFjZXIge1xyXG4gIGZsZXg6IDEgMSBhdXRvO1xyXG59XHJcblxyXG5tYXQtdG9vbGJhci1yb3cgYnV0dG9uIHtcclxuICB3aWR0aDogOTBweDtcclxufVxyXG5cclxuQG1lZGlhIChtYXgtd2lkdGg6IDYxMHB4KSB7XHJcbiAgLmNvbC1jYXRlZ29yeSB7XHJcbiAgICB3aWR0aDogNTAlO1xyXG4gIH1cclxuXHJcbiAgLmNvbC1jYXRlZ29yeTpudGgtY2hpbGQob2RkKSB7XHJcbiAgICBwYWRkaW5nLWxlZnQ6IDA7XHJcbiAgfVxyXG4gIC5jb2wtY2F0ZWdvcnk6bnRoLWNoaWxkKGV2ZW4pIHtcclxuICAgIHBhZGRpbmctcmlnaHQ6IDA7XHJcbiAgfVxyXG59XHJcbiJdfQ== */"
 
 /***/ }),
 
@@ -256,7 +329,7 @@ module.exports = ".row-category,\r\n.col-category {\r\n  display: flex;\r\n  fle
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<mat-toolbar>\n  <mat-toolbar-row>\n    <span>Categories</span>\n    <span class=\"spacer\"></span>\n    <button mat-raised-button color=\"primary\" (click)=\"changeCategoryView(true)\" *ngIf=\"!moreCategories\">\n      More<mat-icon>expand_more</mat-icon>\n    </button>\n    <button mat-raised-button color=\"primary\" (click)=\"changeCategoryView(false)\" *ngIf=\"moreCategories\">\n      Less<mat-icon>expand_less</mat-icon>\n    </button>\n  </mat-toolbar-row>\n</mat-toolbar>\n\n<div class=\"row-category\">\n  <div class=\"col-category\" *ngFor=\"let category of topCategories\">\n    <app-category [category]=\"category\"></app-category>\n  </div>\n</div>\n"
+module.exports = "<div class=\"form\">\n  <div class=\"row\">\n    <div class=\"input-field col s12\">\n      <mat-icon class=\"prefix\">search</mat-icon>\n      <input id=\"search\" type=\"text\" (input)=\"filter($event)\" />\n      <label for=\"search\">Search Category</label>\n    </div>\n  </div>\n</div>\n\n<mat-toolbar>\n  <mat-toolbar-row>\n    <span>Categories</span>\n    <span class=\"spacer\"></span>\n    <button\n      mat-raised-button\n      color=\"primary\"\n      (click)=\"changeCategoryView(true)\"\n      *ngIf=\"!moreCategories && filteredCategories && filteredCategories.length > 4\"\n    >\n      More<mat-icon>expand_more</mat-icon>\n    </button>\n    <button\n      mat-raised-button\n      color=\"primary\"\n      (click)=\"changeCategoryView(false)\"\n      *ngIf=\"moreCategories && filteredCategories && filteredCategories.length > 4\"\n    >\n      Less<mat-icon>expand_less</mat-icon>\n    </button>\n  </mat-toolbar-row>\n</mat-toolbar>\n\n<div class=\"row-category\">\n  <div class=\"col-category\" *ngFor=\"let category of topCategories; let i = index\">\n    <app-category [category]=\"category\" [index]=\"i\"></app-category>\n  </div>\n</div>\n"
 
 /***/ }),
 
@@ -272,24 +345,34 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CategoriesComponent", function() { return CategoriesComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var apollo_angular__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! apollo-angular */ "./node_modules/apollo-angular/fesm5/ng.apollo.js");
+/* harmony import */ var graphql_tag__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! graphql-tag */ "./node_modules/graphql-tag/src/index.js");
+/* harmony import */ var graphql_tag__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(graphql_tag__WEBPACK_IMPORTED_MODULE_3__);
+
+
 
 
 var CategoriesComponent = /** @class */ (function () {
-    function CategoriesComponent() {
+    function CategoriesComponent(apollo) {
+        this.apollo = apollo;
         this.moreCategories = false;
     }
     CategoriesComponent.prototype.ngOnInit = function () {
-        this.categories = [
-            { name: 'Test1', description: 'Random Text 1' },
-            { name: 'Test2', description: 'Thode aur algos' },
-            { name: 'Test3', description: 'Aur bhi zada' },
-            { name: 'Test4', description: 'Ab bas na' },
-            { name: 'Test5', description: 'Description Description 5' },
-            { name: 'Test6', description: 'Description Description 6' },
-            { name: 'Test7', description: 'Description Description 7' }
-        ];
-        this.filteredCategories = this.categories.slice();
-        this.topCategories = this.filteredCategories.slice(0, 4);
+        var _this = this;
+        this.apollo
+            .watchQuery({
+            query: graphql_tag__WEBPACK_IMPORTED_MODULE_3___default()(templateObject_1 || (templateObject_1 = tslib__WEBPACK_IMPORTED_MODULE_0__["__makeTemplateObject"](["\n          {\n            allCategories {\n              description\n              name\n            }\n          }\n        "], ["\n          {\n            allCategories {\n              description\n              name\n            }\n          }\n        "])))
+        })
+            .valueChanges.subscribe(function (result) {
+            var res = result.data;
+            _this.categories = res.allCategories;
+            _this.filteredCategories = _this.categories.slice();
+            _this.topCategories = _this.filteredCategories.slice(0, 4);
+        });
+    };
+    CategoriesComponent.prototype.filter = function (event) {
+        this.filteredCategories = this.categories.filter(function (el) { return el.name.toLowerCase().includes(event.target.value.toLowerCase()); });
+        this.topCategories = this.moreCategories ? this.filteredCategories.slice() : this.filteredCategories.slice(0, 4);
     };
     CategoriesComponent.prototype.changeCategoryView = function (isMoreNeeded) {
         if (isMoreNeeded) {
@@ -307,11 +390,12 @@ var CategoriesComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./categories.component.html */ "./src/app/home/categories/categories.component.html"),
             styles: [__webpack_require__(/*! ./categories.component.css */ "./src/app/home/categories/categories.component.css")]
         }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [apollo_angular__WEBPACK_IMPORTED_MODULE_2__["Apollo"]])
     ], CategoriesComponent);
     return CategoriesComponent;
 }());
 
+var templateObject_1;
 
 
 /***/ }),
@@ -334,7 +418,7 @@ module.exports = "mat-card {\r\n  height: 100%;\r\n}\r\n\r\n.card-content {\r\n 
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<mat-card class=\"blue lighten-1 mat-elevation-z3\">\n  <mat-card-content>\n    <mat-card-title>{{ category.name }}</mat-card-title>\n    <p>\n      {{ category.description }}\n    </p>\n  </mat-card-content>\n</mat-card>\n"
+module.exports = "<mat-card class=\"mat-elevation-z3\" [ngClass]=\"'card-'+index\">\n  <mat-card-content>\n    <mat-card-title>{{ category.name }}</mat-card-title>\n    <p>\n      {{ category.description }}\n    </p>\n  </mat-card-content>\n</mat-card>\n"
 
 /***/ }),
 
@@ -350,17 +434,30 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CategoryComponent", function() { return CategoryComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_2__);
+
 
 
 var CategoryComponent = /** @class */ (function () {
     function CategoryComponent() {
     }
-    CategoryComponent.prototype.ngOnInit = function () {
+    CategoryComponent.prototype.ngOnInit = function () { };
+    CategoryComponent.prototype.ngAfterViewInit = function () {
+        var angle = Math.floor(Math.random() * 180);
+        jquery__WEBPACK_IMPORTED_MODULE_2__('.mat-card.card-' + this.index.toString()).css('background', "linear-gradient(" + angle + "deg, " + this.getRandomColor() + ", " + this.getRandomColor() + ")");
+    };
+    CategoryComponent.prototype.getRandomColor = function () {
+        return "hsl(" + Math.floor(Math.random() * 719) + ", " + Math.floor(Math.random() * 70 + 30) + "%, 50%)";
     };
     tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(),
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Object)
     ], CategoryComponent.prototype, "category", void 0);
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Number)
+    ], CategoryComponent.prototype, "index", void 0);
     CategoryComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'app-category',
@@ -383,7 +480,7 @@ var CategoryComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2hvbWUvZmVhdHVyZWQtYWxnby9mZWF0dXJlZC1hbGdvLmNvbXBvbmVudC5jc3MifQ== */"
+module.exports = "mat-card {\r\n  margin: 8px 0;\r\n}\r\n\r\nmat-toolbar {\r\n  padding-top: 8px;\r\n}\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvaG9tZS9mZWF0dXJlZC1hbGdvL2ZlYXR1cmVkLWFsZ28uY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLGFBQWE7QUFDZjs7QUFFQTtFQUNFLGdCQUFnQjtBQUNsQiIsImZpbGUiOiJzcmMvYXBwL2hvbWUvZmVhdHVyZWQtYWxnby9mZWF0dXJlZC1hbGdvLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyJtYXQtY2FyZCB7XHJcbiAgbWFyZ2luOiA4cHggMDtcclxufVxyXG5cclxubWF0LXRvb2xiYXIge1xyXG4gIHBhZGRpbmctdG9wOiA4cHg7XHJcbn0iXX0= */"
 
 /***/ }),
 
@@ -394,7 +491,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<mat-toolbar>\n  <mat-toolbar-row>\n    <span>Algorithm of the Day</span>\n  </mat-toolbar-row>\n</mat-toolbar>\n\n<mat-card class=\"blue lighten-1 mat-elevation-z3\">\n  <mat-card-content>\n    <mat-card-title>{{ featuredAlgo.name }}</mat-card-title>\n    <p>\n      {{ featuredAlgo.description }}\n    </p>\n  </mat-card-content>\n</mat-card>\n"
+module.exports = "<mat-toolbar>\n  <mat-toolbar-row>\n    <span>Algorithm of the Day</span>\n  </mat-toolbar-row>\n</mat-toolbar>\n\n<mat-card class=\"mat-elevation-z3 featured\">\n  <mat-card-content>\n    <mat-card-title>{{ featuredAlgo.name }}</mat-card-title>\n    <p>\n      {{ featuredAlgo.description }}\n    </p>\n  </mat-card-content>\n</mat-card>\n"
 
 /***/ }),
 
@@ -410,6 +507,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FeaturedAlgoComponent", function() { return FeaturedAlgoComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_2__);
+
 
 
 var FeaturedAlgoComponent = /** @class */ (function () {
@@ -422,6 +522,18 @@ var FeaturedAlgoComponent = /** @class */ (function () {
          Ratione tenetur soluta fuga ipsam minima minus placeat nobis voluptatibus obcaecati quasi odit est porro ducimus esse,\
          quibusdam velit quo nemo optio!'
         };
+    };
+    FeaturedAlgoComponent.prototype.ngAfterViewInit = function () {
+        var angle = Math.floor(Math.random() * 90);
+        jquery__WEBPACK_IMPORTED_MODULE_2__('.featured').css('background', "linear-gradient(" + angle + "deg, " + this.getRandomColor() + ", " + this.getRandomColor() + ")");
+    };
+    FeaturedAlgoComponent.prototype.getRandomColor = function () {
+        var letters = '456789ABCDEF';
+        var color = '#';
+        for (var i = 0; i < 6; i++) {
+            color += letters[Math.floor(Math.random() * letters.length)];
+        }
+        return color;
     };
     FeaturedAlgoComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -445,7 +557,7 @@ var FeaturedAlgoComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "app-categories, app-featured-algo {\r\n  padding: 10px 0;\r\n  border-bottom: 1px solid #cfd8dc;\r\n  display: block;\r\n}\r\n\r\n.form {\r\n  min-width: 150px;\r\n  max-width: 500px;\r\n  width: 100%;\r\n  margin: auto;\r\n}\r\n\r\n.center {\r\n  text-align: center;\r\n}\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvaG9tZS9ob21lLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxlQUFlO0VBQ2YsZ0NBQWdDO0VBQ2hDLGNBQWM7QUFDaEI7O0FBRUE7RUFDRSxnQkFBZ0I7RUFDaEIsZ0JBQWdCO0VBQ2hCLFdBQVc7RUFDWCxZQUFZO0FBQ2Q7O0FBQ0E7RUFDRSxrQkFBa0I7QUFDcEIiLCJmaWxlIjoic3JjL2FwcC9ob21lL2hvbWUuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbImFwcC1jYXRlZ29yaWVzLCBhcHAtZmVhdHVyZWQtYWxnbyB7XHJcbiAgcGFkZGluZzogMTBweCAwO1xyXG4gIGJvcmRlci1ib3R0b206IDFweCBzb2xpZCAjY2ZkOGRjO1xyXG4gIGRpc3BsYXk6IGJsb2NrO1xyXG59XHJcblxyXG4uZm9ybSB7XHJcbiAgbWluLXdpZHRoOiAxNTBweDtcclxuICBtYXgtd2lkdGg6IDUwMHB4O1xyXG4gIHdpZHRoOiAxMDAlO1xyXG4gIG1hcmdpbjogYXV0bztcclxufVxyXG4uY2VudGVyIHtcclxuICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbn0iXX0= */"
+module.exports = "app-categories, app-featured-algo {\r\n  padding: 8px 0;\r\n  border-bottom: 1px solid #cfd8dc;\r\n  display: block;\r\n}\r\n\r\n.center {\r\n  text-align: center;\r\n}\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvaG9tZS9ob21lLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxjQUFjO0VBQ2QsZ0NBQWdDO0VBQ2hDLGNBQWM7QUFDaEI7O0FBRUE7RUFDRSxrQkFBa0I7QUFDcEIiLCJmaWxlIjoic3JjL2FwcC9ob21lL2hvbWUuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbImFwcC1jYXRlZ29yaWVzLCBhcHAtZmVhdHVyZWQtYWxnbyB7XHJcbiAgcGFkZGluZzogOHB4IDA7XHJcbiAgYm9yZGVyLWJvdHRvbTogMXB4IHNvbGlkICNjZmQ4ZGM7XHJcbiAgZGlzcGxheTogYmxvY2s7XHJcbn1cclxuXHJcbi5jZW50ZXIge1xyXG4gIHRleHQtYWxpZ246IGNlbnRlcjtcclxufSJdfQ== */"
 
 /***/ }),
 
@@ -456,7 +568,7 @@ module.exports = "app-categories, app-featured-algo {\r\n  padding: 10px 0;\r\n 
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\">\n  <div class=\"center\">\n    <h1>ALGO DS</h1>\n  </div>\n  <form class=\"form\">\n    <div class=\"row\">\n      <div class=\"input-field col s12\">\n        <mat-icon class=\"prefix\">search</mat-icon>\n        <input id=\"search\" type=\"text\" />\n        <label for=\"search\">Search Category</label>\n      </div>\n    </div>\n  </form>\n  <app-categories></app-categories>\n  <app-featured-algo></app-featured-algo>\n</div>\n"
+module.exports = "<div class=\"container\">\n  <div class=\"center\">\n    <h1>ALGO DS</h1>\n  </div>\n  <app-categories></app-categories>\n  <app-featured-algo></app-featured-algo>\n</div>\n"
 
 /***/ }),
 

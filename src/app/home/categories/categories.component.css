@@ -1,3 +1,10 @@
+.form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+  margin: auto;
+}
+
 .row-category,
 .col-category {
   display: flex;
@@ -10,7 +17,7 @@
   display: flex;
 }
 
-.col-category:nth-child(4n+1) {
+.col-category:nth-child(4n + 1) {
   padding-left: 0;
 }
 .col-category:nth-child(4n) {

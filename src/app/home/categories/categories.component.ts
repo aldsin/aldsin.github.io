@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, OnChanges } from '@angular/core';
+import { Apollo } from 'apollo-angular';
+import gql from 'graphql-tag';
 
 export interface Category {
   name: string;
@@ -16,20 +18,31 @@ export class CategoriesComponent implements OnInit {
   filteredCategories: Category[];
   moreCategories = false;
 
-  constructor() {}
+  constructor(private apollo: Apollo) {}
 
   ngOnInit() {
-    this.categories = [
-      { name: 'Test1', description: 'Random Text 1' },
-      { name: 'Test2', description: 'Thode aur algos' },
-      { name: 'Test3', description: 'Aur bhi zada' },
-      { name: 'Test4', description: 'Ab bas na' },
-      { name: 'Test5', description: 'Description Description 5' },
-      { name: 'Test6', description: 'Description Description 6' },
-      { name: 'Test7', description: 'Description Description 7' }
-    ];
-    this.filteredCategories = this.categories.slice();
-    this.topCategories = this.filteredCategories.slice(0, 4);
+    this.apollo
+      .watchQuery({
+        query: gql`
+          {
+            allCategories {
+              description
+              name
+            }
+          }
+        `
+      })
+      .valueChanges.subscribe(result => {
+        const res = result.data as { allCategories: Category[] };
+        this.categories = res.allCategories;
+        this.filteredCategories = this.categories.slice();
+        this.topCategories = this.filteredCategories.slice(0, 4);
+      });
+  }
+
+  filter(event) {
+    this.filteredCategories = this.categories.filter(el => el.name.toLowerCase().includes(event.target.value.toLowerCase()));
+    this.topCategories = this.moreCategories ? this.filteredCategories.slice() : this.filteredCategories.slice(0, 4);
   }
 
   changeCategoryView(isMoreNeeded: boolean) {

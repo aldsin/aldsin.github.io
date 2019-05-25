@@ -1,18 +1,38 @@
+<div class="form">
+  <div class="row">
+    <div class="input-field col s12">
+      <mat-icon class="prefix">search</mat-icon>
+      <input id="search" type="text" (input)="filter($event)" />
+      <label for="search">Search Category</label>
+    </div>
+  </div>
+</div>
+
 <mat-toolbar>
   <mat-toolbar-row>
     <span>Categories</span>
     <span class="spacer"></span>
-    <button mat-raised-button color="primary" (click)="changeCategoryView(true)" *ngIf="!moreCategories">
+    <button
+      mat-raised-button
+      color="primary"
+      (click)="changeCategoryView(true)"
+      *ngIf="!moreCategories && filteredCategories && filteredCategories.length > 4"
+    >
       More<mat-icon>expand_more</mat-icon>
     </button>
-    <button mat-raised-button color="primary" (click)="changeCategoryView(false)" *ngIf="moreCategories">
+    <button
+      mat-raised-button
+      color="primary"
+      (click)="changeCategoryView(false)"
+      *ngIf="moreCategories && filteredCategories && filteredCategories.length > 4"
+    >
       Less<mat-icon>expand_less</mat-icon>
     </button>
   </mat-toolbar-row>
 </mat-toolbar>
 
 <div class="row-category">
-  <div class="col-category" *ngFor="let category of topCategories">
-    <app-category [category]="category"></app-category>
+  <div class="col-category" *ngFor="let category of topCategories; let i = index">
+    <app-category [category]="category" [index]="i"></app-category>
   </div>
 </div>
