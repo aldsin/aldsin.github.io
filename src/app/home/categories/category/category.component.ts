@@ -1,5 +1,5 @@
-import { Component, OnInit, Input, AfterContentInit, AfterViewInit } from '@angular/core';
-import { Category } from '../categories.component';
+import { Component, OnInit, Input, AfterViewInit } from '@angular/core';
+import { Category } from 'src/app/models/category.model';
 import * as $ from 'jquery';
 
 @Component({
@@ -16,14 +16,12 @@ export class CategoryComponent implements OnInit, AfterViewInit {
   ngOnInit() {}
 
   ngAfterViewInit() {
-    const angle = Math.floor(Math.random() * 180);
-    $('.mat-card.card-' + this.index.toString()).css(
-      'background',
-      `linear-gradient(${angle}deg, ${this.getRandomColor()}, ${this.getRandomColor()})`
-    );
+    $('.mat-card.card-' + this.index.toString()).css('background', `linear-gradient(${this.getRandomColor()})`);
   }
 
   getRandomColor() {
-    return `hsl(${Math.floor(Math.random() * 719)}, ${Math.floor(Math.random() * 70 + 30)}%, 50%)`;
+    const hue = Math.floor(Math.random() * 719);
+    const sat = Math.floor(Math.random() * 40);
+    return `90deg, hsl(${hue}, ${sat + 30}%, 70%), hsl(${hue}, ${sat + 60}%, 60%)`;
   }
 }

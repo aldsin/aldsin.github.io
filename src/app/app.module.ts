@@ -6,6 +6,7 @@ import { AppMaterialModule } from './app.material.module';
 import { GraphQLModule } from './graphql.module';
 import { HttpClientModule } from '@angular/common/http';
 import { ApolloModule, APOLLO_OPTIONS } from 'apollo-angular';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -17,7 +18,16 @@ import { InMemoryCache } from 'apollo-cache-inmemory';
 
 @NgModule({
   declarations: [AppComponent, HomeComponent, CategoriesComponent, CategoryComponent, FeaturedAlgoComponent],
-  imports: [BrowserModule, BrowserAnimationsModule, AppMaterialModule, GraphQLModule, HttpClientModule, ApolloModule, AppRoutingModule],
+  imports: [
+    ReactiveFormsModule,
+    BrowserModule,
+    BrowserAnimationsModule,
+    AppMaterialModule,
+    GraphQLModule,
+    HttpClientModule,
+    ApolloModule,
+    AppRoutingModule
+  ],
   providers: [
     {
       provide: APOLLO_OPTIONS,
