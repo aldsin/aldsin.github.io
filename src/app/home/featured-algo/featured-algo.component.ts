@@ -1,5 +1,6 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
 import * as $ from 'jquery';
+import { Algorithm } from 'src/app/models/algorithm.model';
 
 @Component({
   selector: 'app-featured-algo',
@@ -7,7 +8,7 @@ import * as $ from 'jquery';
   styleUrls: ['./featured-algo.component.css']
 })
 export class FeaturedAlgoComponent implements OnInit, AfterViewInit {
-  featuredAlgo: { name: string; description: string };
+  featuredAlgo: Algorithm;
 
   constructor() {}
 
@@ -25,16 +26,13 @@ export class FeaturedAlgoComponent implements OnInit, AfterViewInit {
     const angle = Math.floor(Math.random() * 90);
     $('.featured').css(
       'background',
-      `linear-gradient(${angle}deg, ${this.getRandomColor()}, ${this.getRandomColor()})`
+      `linear-gradient(${this.getRandomColor()})`
     );
   }
 
   getRandomColor() {
-    const letters = '456789ABCDEF';
-    let color = '#';
-    for (let i = 0; i < 6; i++) {
-      color += letters[Math.floor(Math.random() * letters.length)];
-    }
-    return color;
+    const hue = Math.floor(Math.random() * 719);
+    const sat = Math.floor(Math.random() * 40)
+    return `90deg, hsl(${hue}, ${sat + 20}%, 70%), hsl(${hue}, ${sat + 60}%, 60%)`;
   }
 }

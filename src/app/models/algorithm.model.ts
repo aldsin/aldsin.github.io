@@ -5,10 +5,10 @@ import { Code } from './code.model';
 export class Algorithm {
   id?: string;
   name?: string;
-  description: string;
-  langs: Language[];
-  createdAt: Date;
-  updatedAt: Date;
-  category: Category;
-  codeSet: Code[];
+  description?: string;
+  langs?: Language[];
+  createdAt?: Date;
+  updatedAt?: Date;
+  category?: Category;
+  codeSet?: Code[];
 }

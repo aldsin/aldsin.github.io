@@ -1,13 +1,17 @@
-<div class="form">
-  <div class="row">
-    <div class="input-field col s12">
-      <mat-icon class="prefix">search</mat-icon>
-      <input id="search" type="text" (input)="filter($event)" />
-      <label for="search">Search Category</label>
-    </div>
-  </div>
+<!-- search bar -->
+<div class="search-bar-container">
+  <mat-form-field class="search-bar">
+    <input type="text" placeholder="Search Algorithm" aria-label="Number" matInput [formControl]="myControl" [matAutocomplete]="auto" />
+    <mat-autocomplete #auto="matAutocomplete">
+      <mat-option *ngFor="let option of filteredOptions | async" [value]="option" (click)="clicked(option)">
+        {{ option }}
+      </mat-option>
+    </mat-autocomplete>
+    <mat-icon matSuffix>search</mat-icon>
+  </mat-form-field>
 </div>
 
+<!-- Categories section -->
 <mat-toolbar>
   <mat-toolbar-row>
     <span>Categories</span>
@@ -30,7 +34,6 @@
     </button>
   </mat-toolbar-row>
 </mat-toolbar>
-
 <div class="row-category">
   <div class="col-category" *ngFor="let category of topCategories; let i = index">
     <app-category [category]="category" [index]="i"></app-category>
