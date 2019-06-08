@@ -217,6 +217,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _home_featured_algo_featured_algo_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./home/featured-algo/featured-algo.component */ "./src/app/home/featured-algo/featured-algo.component.ts");
 /* harmony import */ var apollo_angular_link_http__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! apollo-angular-link-http */ "./node_modules/apollo-angular-link-http/fesm5/ng.apolloLink.http.js");
 /* harmony import */ var apollo_cache_inmemory__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! apollo-cache-inmemory */ "./node_modules/apollo-cache-inmemory/lib/bundle.esm.js");
+/* harmony import */ var _replace_pipe__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./replace.pipe */ "./src/app/replace.pipe.ts");
+
 
 
 
@@ -239,7 +241,7 @@ var AppModule = /** @class */ (function () {
     }
     AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["NgModule"])({
-            declarations: [_app_component__WEBPACK_IMPORTED_MODULE_10__["AppComponent"], _home_home_component__WEBPACK_IMPORTED_MODULE_11__["HomeComponent"], _home_categories_categories_component__WEBPACK_IMPORTED_MODULE_12__["CategoriesComponent"], _home_categories_category_category_component__WEBPACK_IMPORTED_MODULE_13__["CategoryComponent"], _home_featured_algo_featured_algo_component__WEBPACK_IMPORTED_MODULE_14__["FeaturedAlgoComponent"]],
+            declarations: [_app_component__WEBPACK_IMPORTED_MODULE_10__["AppComponent"], _home_home_component__WEBPACK_IMPORTED_MODULE_11__["HomeComponent"], _home_categories_categories_component__WEBPACK_IMPORTED_MODULE_12__["CategoriesComponent"], _home_categories_category_category_component__WEBPACK_IMPORTED_MODULE_13__["CategoryComponent"], _home_featured_algo_featured_algo_component__WEBPACK_IMPORTED_MODULE_14__["FeaturedAlgoComponent"], _replace_pipe__WEBPACK_IMPORTED_MODULE_17__["ReplacePipe"]],
             imports: [
                 _angular_forms__WEBPACK_IMPORTED_MODULE_9__["ReactiveFormsModule"],
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
@@ -342,7 +344,7 @@ module.exports = ".search-bar-container {\r\n  text-align: center;\r\n}\r\n\r\n.
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<!-- search bar -->\n<div class=\"search-bar-container\">\n  <mat-form-field class=\"search-bar\">\n    <input type=\"text\" placeholder=\"Search Algorithm\" aria-label=\"Number\" matInput [formControl]=\"myControl\" [matAutocomplete]=\"auto\" />\n    <mat-autocomplete #auto=\"matAutocomplete\">\n      <mat-option *ngFor=\"let option of filteredOptions | async\" [value]=\"option\" (click)=\"clicked(option)\">\n        {{ option }}\n      </mat-option>\n    </mat-autocomplete>\n    <mat-icon matSuffix>search</mat-icon>\n  </mat-form-field>\n</div>\n\n<!-- Categories section -->\n<mat-toolbar>\n  <mat-toolbar-row>\n    <span>Categories</span>\n    <span class=\"spacer\"></span>\n    <button\n      mat-raised-button\n      color=\"primary\"\n      (click)=\"changeCategoryView(true)\"\n      *ngIf=\"!moreCategories && filteredCategories && filteredCategories.length > 4\"\n    >\n      More<mat-icon>expand_more</mat-icon>\n    </button>\n    <button\n      mat-raised-button\n      color=\"primary\"\n      (click)=\"changeCategoryView(false)\"\n      *ngIf=\"moreCategories && filteredCategories && filteredCategories.length > 4\"\n    >\n      Less<mat-icon>expand_less</mat-icon>\n    </button>\n  </mat-toolbar-row>\n</mat-toolbar>\n<div class=\"row-category\">\n  <div class=\"col-category\" *ngFor=\"let category of topCategories; let i = index\">\n    <app-category [category]=\"category\" [index]=\"i\"></app-category>\n  </div>\n</div>\n"
+module.exports = "<!-- search bar -->\n<div class=\"search-bar-container\">\n  <mat-form-field class=\"search-bar\">\n    <input type=\"text\" placeholder=\"Search Algorithm\" aria-label=\"Number\" matInput [formControl]=\"myControl\" [matAutocomplete]=\"auto\" />\n    <mat-autocomplete #auto=\"matAutocomplete\">\n      <mat-option *ngFor=\"let option of filteredOptions | async\" [value]=\"option\" (click)=\"clicked(option)\">\n        {{ option | replace: '_':' ' }}\n      </mat-option>\n    </mat-autocomplete>\n    <mat-icon matSuffix>search</mat-icon>\n  </mat-form-field>\n</div>\n\n<!-- Categories section -->\n<mat-toolbar>\n  <mat-toolbar-row>\n    <span>Categories</span>\n    <span class=\"spacer\"></span>\n    <button\n      mat-raised-button\n      color=\"primary\"\n      (click)=\"changeCategoryView(true)\"\n      *ngIf=\"!moreCategories && filteredCategories && filteredCategories.length > 4\"\n    >\n      More<mat-icon>expand_more</mat-icon>\n    </button>\n    <button\n      mat-raised-button\n      color=\"primary\"\n      (click)=\"changeCategoryView(false)\"\n      *ngIf=\"moreCategories && filteredCategories && filteredCategories.length > 4\"\n    >\n      Less<mat-icon>expand_less</mat-icon>\n    </button>\n  </mat-toolbar-row>\n</mat-toolbar>\n<div class=\"row-category\">\n  <div class=\"col-category\" *ngFor=\"let category of topCategories; let i = index\">\n    <app-category [category]=\"category\" [index]=\"i\"></app-category>\n  </div>\n</div>\n"
 
 /***/ }),
 
@@ -396,7 +398,7 @@ var CategoriesComponent = /** @class */ (function () {
             .valueChanges.subscribe(function (result) {
             var res = result.data;
             _this.algorithms = res.allAlgorithms;
-            _this.options = _this.algorithms.map(function (algorithm) { return algorithm.name.replace(/_/g, ' '); });
+            _this.options = _this.algorithms.map(function (algorithm) { return algorithm.name; });
             // Copied from: Angular material -> autocomplete
             _this.filteredOptions = _this.myControl.valueChanges.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["startWith"])(''), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["map"])(function (value) { return _this._filter(value); }));
         });
@@ -528,7 +530,7 @@ module.exports = "mat-card {\r\n  margin: 8px 0;\r\n}\r\n\r\nmat-toolbar {\r\n  
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<mat-toolbar>\n  <mat-toolbar-row>\n    <span>Algorithm of the Day</span>\n  </mat-toolbar-row>\n</mat-toolbar>\n\n<mat-card class=\"mat-elevation-z3 featured\">\n  <mat-card-content>\n    <mat-card-title>{{ featuredAlgo.name }}</mat-card-title>\n    <p>\n      {{ featuredAlgo.description }}\n    </p>\n  </mat-card-content>\n</mat-card>\n"
+module.exports = "<mat-toolbar>\n  <mat-toolbar-row>\n    <span>Algorithm of the Day</span>\n  </mat-toolbar-row>\n</mat-toolbar>\n\n<mat-card class=\"mat-elevation-z3 featured\">\n  <mat-card-content *ngIf=\"featuredAlgo\">\n    <mat-card-title>{{ featuredAlgo.name | replace: '_':' ' }}</mat-card-title>\n    <p>\n      {{ featuredAlgo.description }}\n    </p>\n    <mat-chip-list aria-label=\"Fish selection\">\n      <a *ngFor=\"let lang of featuredAlgo.langs\" [routerLink]=\"'.'\">\n        <mat-chip>{{ lang.langName }}</mat-chip>\n      </a>\n    </mat-chip-list>\n  </mat-card-content>\n</mat-card>\n"
 
 /***/ }),
 
@@ -546,19 +548,29 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var apollo_angular__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! apollo-angular */ "./node_modules/apollo-angular/fesm5/ng.apollo.js");
+/* harmony import */ var graphql_tag__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! graphql-tag */ "./node_modules/graphql-tag/src/index.js");
+/* harmony import */ var graphql_tag__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(graphql_tag__WEBPACK_IMPORTED_MODULE_4__);
+
+
 
 
 
 var FeaturedAlgoComponent = /** @class */ (function () {
-    function FeaturedAlgoComponent() {
+    function FeaturedAlgoComponent(apollo) {
+        this.apollo = apollo;
     }
     FeaturedAlgoComponent.prototype.ngOnInit = function () {
-        this.featuredAlgo = {
-            name: 'Test1',
-            description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit.\
-         Ratione tenetur soluta fuga ipsam minima minus placeat nobis voluptatibus obcaecati quasi odit est porro ducimus esse,\
-         quibusdam velit quo nemo optio!'
-        };
+        var _this = this;
+        this.apollo
+            .watchQuery({
+            query: graphql_tag__WEBPACK_IMPORTED_MODULE_4___default()(templateObject_1 || (templateObject_1 = tslib__WEBPACK_IMPORTED_MODULE_0__["__makeTemplateObject"](["\n          {\n            codeOfTheDay {\n              name\n              description\n              langs {\n                langName\n              }\n            }\n          }\n        "], ["\n          {\n            codeOfTheDay {\n              name\n              description\n              langs {\n                langName\n              }\n            }\n          }\n        "])))
+        })
+            .valueChanges.subscribe(function (result) {
+            var res = result.data;
+            _this.featuredAlgo = res.codeOfTheDay[0];
+            console.log(_this.featuredAlgo);
+        });
     };
     FeaturedAlgoComponent.prototype.ngAfterViewInit = function () {
         var angle = Math.floor(Math.random() * 90);
@@ -575,11 +587,12 @@ var FeaturedAlgoComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./featured-algo.component.html */ "./src/app/home/featured-algo/featured-algo.component.html"),
             styles: [__webpack_require__(/*! ./featured-algo.component.css */ "./src/app/home/featured-algo/featured-algo.component.css")]
         }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [apollo_angular__WEBPACK_IMPORTED_MODULE_3__["Apollo"]])
     ], FeaturedAlgoComponent);
     return FeaturedAlgoComponent;
 }());
 
+var templateObject_1;
 
 
 /***/ }),
@@ -634,6 +647,38 @@ var HomeComponent = /** @class */ (function () {
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
     ], HomeComponent);
     return HomeComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/replace.pipe.ts":
+/*!*********************************!*\
+  !*** ./src/app/replace.pipe.ts ***!
+  \*********************************/
+/*! exports provided: ReplacePipe */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ReplacePipe", function() { return ReplacePipe; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+
+
+var ReplacePipe = /** @class */ (function () {
+    function ReplacePipe() {
+    }
+    ReplacePipe.prototype.transform = function (str, term, replacement) {
+        return str.replace(new RegExp(term, 'g'), replacement);
+    };
+    ReplacePipe = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Pipe"])({
+            name: 'replace'
+        })
+    ], ReplacePipe);
+    return ReplacePipe;
 }());
 
 
