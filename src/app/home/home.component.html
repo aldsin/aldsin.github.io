@@ -2,6 +2,20 @@
   <div class="center">
     <h1>ALGO DS</h1>
   </div>
+
+  <!-- search bar -->
+  <div class="search-bar-container">
+    <mat-form-field class="search-bar">
+      <input type="text" placeholder="Search Algorithm" matInput [formControl]="searchBar" [matAutocomplete]="auto" />
+      <mat-autocomplete #auto="matAutocomplete" autoActiveFirstOption>
+        <mat-option *ngFor="let option of filteredOptions | async" [value]="option" (click)="clicked(option)">
+          {{ option | replace: '_':' ' }}
+        </mat-option>
+      </mat-autocomplete>
+      <mat-icon matSuffix>search</mat-icon>
+    </mat-form-field>
+  </div>
+
   <app-categories></app-categories>
   <app-featured-algo></app-featured-algo>
 </div>
