@@ -4,7 +4,7 @@
     <input type="text" placeholder="Search Algorithm" aria-label="Number" matInput [formControl]="myControl" [matAutocomplete]="auto" />
     <mat-autocomplete #auto="matAutocomplete">
       <mat-option *ngFor="let option of filteredOptions | async" [value]="option" (click)="clicked(option)">
-        {{ option }}
+        {{ option | replace: '_':' ' }}
       </mat-option>
     </mat-autocomplete>
     <mat-icon matSuffix>search</mat-icon>
