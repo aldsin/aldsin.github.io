@@ -59,7 +59,7 @@ export class CategoriesComponent implements OnInit {
       .valueChanges.subscribe(result => {
         const res = result.data as { allAlgorithms: Algorithm[] };
         this.algorithms = res.allAlgorithms;
-        this.options = this.algorithms.map(algorithm => algorithm.name.replace(/_/g, ' '));
+        this.options = this.algorithms.map(algorithm => algorithm.name);
 
         // Copied from: Angular material -> autocomplete
         this.filteredOptions = this.myControl.valueChanges.pipe(

@@ -5,10 +5,15 @@
 </mat-toolbar>
 
 <mat-card class="mat-elevation-z3 featured">
-  <mat-card-content>
-    <mat-card-title>{{ featuredAlgo.name }}</mat-card-title>
+  <mat-card-content *ngIf="featuredAlgo">
+    <mat-card-title>{{ featuredAlgo.name | replace: '_':' ' }}</mat-card-title>
     <p>
       {{ featuredAlgo.description }}
     </p>
+    <mat-chip-list aria-label="Fish selection">
+      <a *ngFor="let lang of featuredAlgo.langs" [routerLink]="'.'">
+        <mat-chip>{{ lang.langName }}</mat-chip>
+      </a>
+    </mat-chip-list>
   </mat-card-content>
 </mat-card>

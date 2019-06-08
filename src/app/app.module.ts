@@ -15,9 +15,10 @@ import { CategoryComponent } from './home/categories/category/category.component
 import { FeaturedAlgoComponent } from './home/featured-algo/featured-algo.component';
 import { HttpLink } from 'apollo-angular-link-http';
 import { InMemoryCache } from 'apollo-cache-inmemory';
+import { ReplacePipe } from './replace.pipe';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, CategoriesComponent, CategoryComponent, FeaturedAlgoComponent],
+  declarations: [AppComponent, HomeComponent, CategoriesComponent, CategoryComponent, FeaturedAlgoComponent, ReplacePipe],
   imports: [
     ReactiveFormsModule,
     BrowserModule,

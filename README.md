@@ -6,6 +6,14 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
+## Development server for mobile
+
+Run `npm run mobile` for a dev server that can be opened on mobile also. Localhost will automatically open on the system where you run this command. For running on other devices,
+
+1. Open terminal and enter `ipconfig`. Note the IPv4 Address.
+2. Connect the other device on same network.
+3. Navigate to `http://[IPv4 Address]:4200` on other device's browser.
+
 ## Code scaffolding
 
 Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
