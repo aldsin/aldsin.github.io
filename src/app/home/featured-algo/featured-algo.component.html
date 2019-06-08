@@ -11,9 +11,7 @@
       {{ featuredAlgo.description }}
     </p>
     <mat-chip-list aria-label="Fish selection">
-      <a *ngFor="let lang of featuredAlgo.langs" [routerLink]="'.'">
-        <mat-chip>{{ lang.langName }}</mat-chip>
-      </a>
+      <mat-chip *ngFor="let lang of featuredAlgo.langs" (click)="navigate(featuredAlgo.name)">{{ lang.langName }}</mat-chip>
     </mat-chip-list>
   </mat-card-content>
 </mat-card>

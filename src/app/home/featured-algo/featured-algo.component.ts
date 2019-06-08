@@ -3,6 +3,7 @@ import * as $ from 'jquery';
 import { Algorithm } from 'src/app/models/algorithm.model';
 import { Apollo } from 'apollo-angular';
 import gql from 'graphql-tag';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-featured-algo',
@@ -12,7 +13,7 @@ import gql from 'graphql-tag';
 export class FeaturedAlgoComponent implements OnInit, AfterViewInit {
   featuredAlgo: Algorithm;
 
-  constructor(private apollo: Apollo) {}
+  constructor(private apollo: Apollo, private router: Router) {}
 
   ngOnInit() {
     this.apollo
@@ -37,13 +38,16 @@ export class FeaturedAlgoComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit() {
-    const angle = Math.floor(Math.random() * 90);
-    $('.featured').css('background', `linear-gradient(${this.getRandomColor()})`);
+    $('.featured').css('background', `linear-gradient(${this._getRandomColor()})`);
   }
 
-  getRandomColor() {
+  private _getRandomColor() {
     const hue = Math.floor(Math.random() * 719);
     const sat = Math.floor(Math.random() * 40);
     return `90deg, hsl(${hue}, ${sat + 20}%, 70%), hsl(${hue}, ${sat + 60}%, 60%)`;
+  }
+
+  navigate(name) {
+    this.router.navigate(['/algorithm', name]);
   }
 }

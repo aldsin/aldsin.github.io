@@ -7,3 +7,13 @@ app-categories, app-featured-algo {
 .center {
   text-align: center;
 }
+
+.search-bar-container {
+  text-align: center;
+}
+
+.search-bar {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
