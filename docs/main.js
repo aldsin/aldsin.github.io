@@ -23,6 +23,66 @@ webpackEmptyAsyncContext.id = "./src/$$_lazy_route_resource lazy recursive";
 
 /***/ }),
 
+/***/ "./src/app/algorithm/algorithm.component.css":
+/*!***************************************************!*\
+  !*** ./src/app/algorithm/algorithm.component.css ***!
+  \***************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2FsZ29yaXRobS9hbGdvcml0aG0uY29tcG9uZW50LmNzcyJ9 */"
+
+/***/ }),
+
+/***/ "./src/app/algorithm/algorithm.component.html":
+/*!****************************************************!*\
+  !*** ./src/app/algorithm/algorithm.component.html ***!
+  \****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<p>\r\n  {{ algoName | replace: '_':' ' }}\r\n</p>\r\n"
+
+/***/ }),
+
+/***/ "./src/app/algorithm/algorithm.component.ts":
+/*!**************************************************!*\
+  !*** ./src/app/algorithm/algorithm.component.ts ***!
+  \**************************************************/
+/*! exports provided: AlgorithmComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AlgorithmComponent", function() { return AlgorithmComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+
+
+
+var AlgorithmComponent = /** @class */ (function () {
+    function AlgorithmComponent(route) {
+        this.route = route;
+    }
+    AlgorithmComponent.prototype.ngOnInit = function () {
+        this.algoName = this.route.snapshot.params.name;
+    };
+    AlgorithmComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-algorithm',
+            template: __webpack_require__(/*! ./algorithm.component.html */ "./src/app/algorithm/algorithm.component.html"),
+            styles: [__webpack_require__(/*! ./algorithm.component.css */ "./src/app/algorithm/algorithm.component.css")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"]])
+    ], AlgorithmComponent);
+    return AlgorithmComponent;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/app-routing.module.ts":
 /*!***************************************!*\
   !*** ./src/app/app-routing.module.ts ***!
@@ -37,11 +97,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 /* harmony import */ var _home_home_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./home/home.component */ "./src/app/home/home.component.ts");
+/* harmony import */ var _algorithm_algorithm_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./algorithm/algorithm.component */ "./src/app/algorithm/algorithm.component.ts");
 
 
 
 
-var routes = [{ path: '', component: _home_home_component__WEBPACK_IMPORTED_MODULE_3__["HomeComponent"] }];
+
+var routes = [{ path: '', component: _home_home_component__WEBPACK_IMPORTED_MODULE_3__["HomeComponent"] }, { path: 'algorithm/:name', component: _algorithm_algorithm_component__WEBPACK_IMPORTED_MODULE_4__["AlgorithmComponent"] }];
 var AppRoutingModule = /** @class */ (function () {
     function AppRoutingModule() {
     }
@@ -218,6 +280,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var apollo_angular_link_http__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! apollo-angular-link-http */ "./node_modules/apollo-angular-link-http/fesm5/ng.apolloLink.http.js");
 /* harmony import */ var apollo_cache_inmemory__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! apollo-cache-inmemory */ "./node_modules/apollo-cache-inmemory/lib/bundle.esm.js");
 /* harmony import */ var _replace_pipe__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./replace.pipe */ "./src/app/replace.pipe.ts");
+/* harmony import */ var _algorithm_algorithm_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./algorithm/algorithm.component */ "./src/app/algorithm/algorithm.component.ts");
+
 
 
 
@@ -241,7 +305,15 @@ var AppModule = /** @class */ (function () {
     }
     AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["NgModule"])({
-            declarations: [_app_component__WEBPACK_IMPORTED_MODULE_10__["AppComponent"], _home_home_component__WEBPACK_IMPORTED_MODULE_11__["HomeComponent"], _home_categories_categories_component__WEBPACK_IMPORTED_MODULE_12__["CategoriesComponent"], _home_categories_category_category_component__WEBPACK_IMPORTED_MODULE_13__["CategoryComponent"], _home_featured_algo_featured_algo_component__WEBPACK_IMPORTED_MODULE_14__["FeaturedAlgoComponent"], _replace_pipe__WEBPACK_IMPORTED_MODULE_17__["ReplacePipe"]],
+            declarations: [
+                _app_component__WEBPACK_IMPORTED_MODULE_10__["AppComponent"],
+                _home_home_component__WEBPACK_IMPORTED_MODULE_11__["HomeComponent"],
+                _home_categories_categories_component__WEBPACK_IMPORTED_MODULE_12__["CategoriesComponent"],
+                _home_categories_category_category_component__WEBPACK_IMPORTED_MODULE_13__["CategoryComponent"],
+                _home_featured_algo_featured_algo_component__WEBPACK_IMPORTED_MODULE_14__["FeaturedAlgoComponent"],
+                _replace_pipe__WEBPACK_IMPORTED_MODULE_17__["ReplacePipe"],
+                _algorithm_algorithm_component__WEBPACK_IMPORTED_MODULE_18__["AlgorithmComponent"]
+            ],
             imports: [
                 _angular_forms__WEBPACK_IMPORTED_MODULE_9__["ReactiveFormsModule"],
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
@@ -333,7 +405,7 @@ var GraphQLModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".search-bar-container {\r\n  text-align: center;\r\n}\r\n\r\n.search-bar {\r\n  min-width: 150px;\r\n  max-width: 500px;\r\n  width: 100%;\r\n}\r\n\r\n.row-category,\r\n.col-category {\r\n  display: flex;\r\n  flex-wrap: wrap;\r\n}\r\n\r\n.col-category {\r\n  width: 25%;\r\n  padding: 1%;\r\n  display: flex;\r\n}\r\n\r\n.col-category:nth-child(4n + 1) {\r\n  padding-left: 0;\r\n}\r\n\r\n.col-category:nth-child(4n) {\r\n  padding-right: 0;\r\n}\r\n\r\napp-category {\r\n  height: 100%;\r\n  width: 100%;\r\n}\r\n\r\n.spacer {\r\n  flex: 1 1 auto;\r\n}\r\n\r\nmat-toolbar-row button {\r\n  width: 90px;\r\n}\r\n\r\n@media (max-width: 610px) {\r\n  .col-category {\r\n    width: 50%;\r\n  }\r\n\r\n  .col-category:nth-child(odd) {\r\n    padding-left: 0;\r\n  }\r\n  .col-category:nth-child(even) {\r\n    padding-right: 0;\r\n  }\r\n}\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvaG9tZS9jYXRlZ29yaWVzL2NhdGVnb3JpZXMuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLGtCQUFrQjtBQUNwQjs7QUFFQTtFQUNFLGdCQUFnQjtFQUNoQixnQkFBZ0I7RUFDaEIsV0FBVztBQUNiOztBQUVBOztFQUVFLGFBQWE7RUFDYixlQUFlO0FBQ2pCOztBQUVBO0VBQ0UsVUFBVTtFQUNWLFdBQVc7RUFDWCxhQUFhO0FBQ2Y7O0FBRUE7RUFDRSxlQUFlO0FBQ2pCOztBQUNBO0VBQ0UsZ0JBQWdCO0FBQ2xCOztBQUVBO0VBQ0UsWUFBWTtFQUNaLFdBQVc7QUFDYjs7QUFFQTtFQUNFLGNBQWM7QUFDaEI7O0FBRUE7RUFDRSxXQUFXO0FBQ2I7O0FBRUE7RUFDRTtJQUNFLFVBQVU7RUFDWjs7RUFFQTtJQUNFLGVBQWU7RUFDakI7RUFDQTtJQUNFLGdCQUFnQjtFQUNsQjtBQUNGIiwiZmlsZSI6InNyYy9hcHAvaG9tZS9jYXRlZ29yaWVzL2NhdGVnb3JpZXMuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi5zZWFyY2gtYmFyLWNvbnRhaW5lciB7XHJcbiAgdGV4dC1hbGlnbjogY2VudGVyO1xyXG59XHJcblxyXG4uc2VhcmNoLWJhciB7XHJcbiAgbWluLXdpZHRoOiAxNTBweDtcclxuICBtYXgtd2lkdGg6IDUwMHB4O1xyXG4gIHdpZHRoOiAxMDAlO1xyXG59XHJcblxyXG4ucm93LWNhdGVnb3J5LFxyXG4uY29sLWNhdGVnb3J5IHtcclxuICBkaXNwbGF5OiBmbGV4O1xyXG4gIGZsZXgtd3JhcDogd3JhcDtcclxufVxyXG5cclxuLmNvbC1jYXRlZ29yeSB7XHJcbiAgd2lkdGg6IDI1JTtcclxuICBwYWRkaW5nOiAxJTtcclxuICBkaXNwbGF5OiBmbGV4O1xyXG59XHJcblxyXG4uY29sLWNhdGVnb3J5Om50aC1jaGlsZCg0biArIDEpIHtcclxuICBwYWRkaW5nLWxlZnQ6IDA7XHJcbn1cclxuLmNvbC1jYXRlZ29yeTpudGgtY2hpbGQoNG4pIHtcclxuICBwYWRkaW5nLXJpZ2h0OiAwO1xyXG59XHJcblxyXG5hcHAtY2F0ZWdvcnkge1xyXG4gIGhlaWdodDogMTAwJTtcclxuICB3aWR0aDogMTAwJTtcclxufVxyXG5cclxuLnNwYWNlciB7XHJcbiAgZmxleDogMSAxIGF1dG87XHJcbn1cclxuXHJcbm1hdC10b29sYmFyLXJvdyBidXR0b24ge1xyXG4gIHdpZHRoOiA5MHB4O1xyXG59XHJcblxyXG5AbWVkaWEgKG1heC13aWR0aDogNjEwcHgpIHtcclxuICAuY29sLWNhdGVnb3J5IHtcclxuICAgIHdpZHRoOiA1MCU7XHJcbiAgfVxyXG5cclxuICAuY29sLWNhdGVnb3J5Om50aC1jaGlsZChvZGQpIHtcclxuICAgIHBhZGRpbmctbGVmdDogMDtcclxuICB9XHJcbiAgLmNvbC1jYXRlZ29yeTpudGgtY2hpbGQoZXZlbikge1xyXG4gICAgcGFkZGluZy1yaWdodDogMDtcclxuICB9XHJcbn1cclxuIl19 */"
+module.exports = ".row-category,\r\n.col-category {\r\n  display: flex;\r\n  flex-wrap: wrap;\r\n}\r\n\r\n.col-category {\r\n  width: 25%;\r\n  padding: 1%;\r\n  display: flex;\r\n}\r\n\r\n.col-category:nth-child(4n + 1) {\r\n  padding-left: 0;\r\n}\r\n\r\n.col-category:nth-child(4n) {\r\n  padding-right: 0;\r\n}\r\n\r\napp-category {\r\n  height: 100%;\r\n  width: 100%;\r\n}\r\n\r\n.spacer {\r\n  flex: 1 1 auto;\r\n}\r\n\r\nmat-toolbar-row button {\r\n  width: 90px;\r\n}\r\n\r\n@media (max-width: 610px) {\r\n  .col-category {\r\n    width: 50%;\r\n  }\r\n\r\n  .col-category:nth-child(odd) {\r\n    padding-left: 0;\r\n  }\r\n  .col-category:nth-child(even) {\r\n    padding-right: 0;\r\n  }\r\n}\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvaG9tZS9jYXRlZ29yaWVzL2NhdGVnb3JpZXMuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTs7RUFFRSxhQUFhO0VBQ2IsZUFBZTtBQUNqQjs7QUFFQTtFQUNFLFVBQVU7RUFDVixXQUFXO0VBQ1gsYUFBYTtBQUNmOztBQUVBO0VBQ0UsZUFBZTtBQUNqQjs7QUFDQTtFQUNFLGdCQUFnQjtBQUNsQjs7QUFFQTtFQUNFLFlBQVk7RUFDWixXQUFXO0FBQ2I7O0FBRUE7RUFDRSxjQUFjO0FBQ2hCOztBQUVBO0VBQ0UsV0FBVztBQUNiOztBQUVBO0VBQ0U7SUFDRSxVQUFVO0VBQ1o7O0VBRUE7SUFDRSxlQUFlO0VBQ2pCO0VBQ0E7SUFDRSxnQkFBZ0I7RUFDbEI7QUFDRiIsImZpbGUiOiJzcmMvYXBwL2hvbWUvY2F0ZWdvcmllcy9jYXRlZ29yaWVzLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIucm93LWNhdGVnb3J5LFxyXG4uY29sLWNhdGVnb3J5IHtcclxuICBkaXNwbGF5OiBmbGV4O1xyXG4gIGZsZXgtd3JhcDogd3JhcDtcclxufVxyXG5cclxuLmNvbC1jYXRlZ29yeSB7XHJcbiAgd2lkdGg6IDI1JTtcclxuICBwYWRkaW5nOiAxJTtcclxuICBkaXNwbGF5OiBmbGV4O1xyXG59XHJcblxyXG4uY29sLWNhdGVnb3J5Om50aC1jaGlsZCg0biArIDEpIHtcclxuICBwYWRkaW5nLWxlZnQ6IDA7XHJcbn1cclxuLmNvbC1jYXRlZ29yeTpudGgtY2hpbGQoNG4pIHtcclxuICBwYWRkaW5nLXJpZ2h0OiAwO1xyXG59XHJcblxyXG5hcHAtY2F0ZWdvcnkge1xyXG4gIGhlaWdodDogMTAwJTtcclxuICB3aWR0aDogMTAwJTtcclxufVxyXG5cclxuLnNwYWNlciB7XHJcbiAgZmxleDogMSAxIGF1dG87XHJcbn1cclxuXHJcbm1hdC10b29sYmFyLXJvdyBidXR0b24ge1xyXG4gIHdpZHRoOiA5MHB4O1xyXG59XHJcblxyXG5AbWVkaWEgKG1heC13aWR0aDogNjEwcHgpIHtcclxuICAuY29sLWNhdGVnb3J5IHtcclxuICAgIHdpZHRoOiA1MCU7XHJcbiAgfVxyXG5cclxuICAuY29sLWNhdGVnb3J5Om50aC1jaGlsZChvZGQpIHtcclxuICAgIHBhZGRpbmctbGVmdDogMDtcclxuICB9XHJcbiAgLmNvbC1jYXRlZ29yeTpudGgtY2hpbGQoZXZlbikge1xyXG4gICAgcGFkZGluZy1yaWdodDogMDtcclxuICB9XHJcbn1cclxuIl19 */"
 
 /***/ }),
 
@@ -344,7 +416,7 @@ module.exports = ".search-bar-container {\r\n  text-align: center;\r\n}\r\n\r\n.
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<!-- search bar -->\n<div class=\"search-bar-container\">\n  <mat-form-field class=\"search-bar\">\n    <input type=\"text\" placeholder=\"Search Algorithm\" aria-label=\"Number\" matInput [formControl]=\"myControl\" [matAutocomplete]=\"auto\" />\n    <mat-autocomplete #auto=\"matAutocomplete\">\n      <mat-option *ngFor=\"let option of filteredOptions | async\" [value]=\"option\" (click)=\"clicked(option)\">\n        {{ option | replace: '_':' ' }}\n      </mat-option>\n    </mat-autocomplete>\n    <mat-icon matSuffix>search</mat-icon>\n  </mat-form-field>\n</div>\n\n<!-- Categories section -->\n<mat-toolbar>\n  <mat-toolbar-row>\n    <span>Categories</span>\n    <span class=\"spacer\"></span>\n    <button\n      mat-raised-button\n      color=\"primary\"\n      (click)=\"changeCategoryView(true)\"\n      *ngIf=\"!moreCategories && filteredCategories && filteredCategories.length > 4\"\n    >\n      More<mat-icon>expand_more</mat-icon>\n    </button>\n    <button\n      mat-raised-button\n      color=\"primary\"\n      (click)=\"changeCategoryView(false)\"\n      *ngIf=\"moreCategories && filteredCategories && filteredCategories.length > 4\"\n    >\n      Less<mat-icon>expand_less</mat-icon>\n    </button>\n  </mat-toolbar-row>\n</mat-toolbar>\n<div class=\"row-category\">\n  <div class=\"col-category\" *ngFor=\"let category of topCategories; let i = index\">\n    <app-category [category]=\"category\" [index]=\"i\"></app-category>\n  </div>\n</div>\n"
+module.exports = "<!-- Categories header -->\r\n<mat-toolbar>\r\n  <mat-toolbar-row>\r\n    <span>Categories</span>\r\n    <span class=\"spacer\"></span>\r\n    <button\r\n      mat-raised-button\r\n      color=\"primary\"\r\n      (click)=\"changeCategoryView(true)\"\r\n      *ngIf=\"!moreCategories && filteredCategories && filteredCategories.length > 4\"\r\n    >\r\n      More<mat-icon>expand_more</mat-icon>\r\n    </button>\r\n    <button\r\n      mat-raised-button\r\n      color=\"primary\"\r\n      (click)=\"changeCategoryView(false)\"\r\n      *ngIf=\"moreCategories && filteredCategories && filteredCategories.length > 4\"\r\n    >\r\n      Less<mat-icon>expand_less</mat-icon>\r\n    </button>\r\n  </mat-toolbar-row>\r\n</mat-toolbar>\r\n\r\n<!-- Categories -->\r\n<div class=\"row-category\">\r\n  <div class=\"col-category\" *ngFor=\"let category of topCategories; let i = index\">\r\n    <app-category [category]=\"category\" [index]=\"i\"></app-category>\r\n  </div>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -363,10 +435,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var apollo_angular__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! apollo-angular */ "./node_modules/apollo-angular/fesm5/ng.apollo.js");
 /* harmony import */ var graphql_tag__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! graphql-tag */ "./node_modules/graphql-tag/src/index.js");
 /* harmony import */ var graphql_tag__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(graphql_tag__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm5/operators/index.js");
-
-
 
 
 
@@ -374,7 +442,6 @@ __webpack_require__.r(__webpack_exports__);
 var CategoriesComponent = /** @class */ (function () {
     function CategoriesComponent(apollo) {
         this.apollo = apollo;
-        this.myControl = new _angular_forms__WEBPACK_IMPORTED_MODULE_4__["FormControl"]();
     }
     CategoriesComponent.prototype.ngOnInit = function () {
         var _this = this;
@@ -389,23 +456,6 @@ var CategoriesComponent = /** @class */ (function () {
             _this.categories = res.allCategories;
             _this.topCategories = _this.categories.slice(0, 4);
         });
-        // Get all algorithms and fill their names in options
-        // options is used for dropdown
-        this.apollo
-            .watchQuery({
-            query: graphql_tag__WEBPACK_IMPORTED_MODULE_3___default()(templateObject_2 || (templateObject_2 = tslib__WEBPACK_IMPORTED_MODULE_0__["__makeTemplateObject"](["\n          {\n            allAlgorithms {\n              name\n            }\n          }\n        "], ["\n          {\n            allAlgorithms {\n              name\n            }\n          }\n        "])))
-        })
-            .valueChanges.subscribe(function (result) {
-            var res = result.data;
-            _this.algorithms = res.allAlgorithms;
-            _this.options = _this.algorithms.map(function (algorithm) { return algorithm.name; });
-            // Copied from: Angular material -> autocomplete
-            _this.filteredOptions = _this.myControl.valueChanges.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["startWith"])(''), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["map"])(function (value) { return _this._filter(value); }));
-        });
-    };
-    // when clicked on any option, route to that algorithm
-    CategoriesComponent.prototype.clicked = function (option) {
-        console.log(option);
     };
     // when More/Less button is clicked, then display categories accordingly
     CategoriesComponent.prototype.changeCategoryView = function (isMoreNeeded) {
@@ -415,12 +465,6 @@ var CategoriesComponent = /** @class */ (function () {
         else {
             this.topCategories = this.categories.slice(0, 4);
         }
-    };
-    // filter dropdown options in searchbar
-    // Copied from: Angular material -> autocomplete
-    CategoriesComponent.prototype._filter = function (value) {
-        var filterValue = value.toLowerCase();
-        return this.options.filter(function (option) { return option.toLowerCase().includes(filterValue); }).slice(0, 20);
     };
     CategoriesComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -433,7 +477,7 @@ var CategoriesComponent = /** @class */ (function () {
     return CategoriesComponent;
 }());
 
-var templateObject_1, templateObject_2;
+var templateObject_1;
 
 
 /***/ }),
@@ -530,7 +574,7 @@ module.exports = "mat-card {\r\n  margin: 8px 0;\r\n}\r\n\r\nmat-toolbar {\r\n  
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<mat-toolbar>\n  <mat-toolbar-row>\n    <span>Algorithm of the Day</span>\n  </mat-toolbar-row>\n</mat-toolbar>\n\n<mat-card class=\"mat-elevation-z3 featured\">\n  <mat-card-content *ngIf=\"featuredAlgo\">\n    <mat-card-title>{{ featuredAlgo.name | replace: '_':' ' }}</mat-card-title>\n    <p>\n      {{ featuredAlgo.description }}\n    </p>\n    <mat-chip-list aria-label=\"Fish selection\">\n      <a *ngFor=\"let lang of featuredAlgo.langs\" [routerLink]=\"'.'\">\n        <mat-chip>{{ lang.langName }}</mat-chip>\n      </a>\n    </mat-chip-list>\n  </mat-card-content>\n</mat-card>\n"
+module.exports = "<mat-toolbar>\r\n  <mat-toolbar-row>\r\n    <span>Algorithm of the Day</span>\r\n  </mat-toolbar-row>\r\n</mat-toolbar>\r\n\r\n<mat-card class=\"mat-elevation-z3 featured\">\r\n  <mat-card-content *ngIf=\"featuredAlgo\">\r\n    <mat-card-title>{{ featuredAlgo.name | replace: '_':' ' }}</mat-card-title>\r\n    <p>\r\n      {{ featuredAlgo.description }}\r\n    </p>\r\n    <mat-chip-list aria-label=\"Fish selection\">\r\n      <mat-chip *ngFor=\"let lang of featuredAlgo.langs\" (click)=\"navigate(featuredAlgo.name)\">{{ lang.langName }}</mat-chip>\r\n    </mat-chip-list>\r\n  </mat-card-content>\r\n</mat-card>\r\n"
 
 /***/ }),
 
@@ -551,14 +595,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var apollo_angular__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! apollo-angular */ "./node_modules/apollo-angular/fesm5/ng.apollo.js");
 /* harmony import */ var graphql_tag__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! graphql-tag */ "./node_modules/graphql-tag/src/index.js");
 /* harmony import */ var graphql_tag__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(graphql_tag__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+
 
 
 
 
 
 var FeaturedAlgoComponent = /** @class */ (function () {
-    function FeaturedAlgoComponent(apollo) {
+    function FeaturedAlgoComponent(apollo, router) {
         this.apollo = apollo;
+        this.router = router;
     }
     FeaturedAlgoComponent.prototype.ngOnInit = function () {
         var _this = this;
@@ -573,13 +620,15 @@ var FeaturedAlgoComponent = /** @class */ (function () {
         });
     };
     FeaturedAlgoComponent.prototype.ngAfterViewInit = function () {
-        var angle = Math.floor(Math.random() * 90);
-        jquery__WEBPACK_IMPORTED_MODULE_2__('.featured').css('background', "linear-gradient(" + this.getRandomColor() + ")");
+        jquery__WEBPACK_IMPORTED_MODULE_2__('.featured').css('background', "linear-gradient(" + this._getRandomColor() + ")");
     };
-    FeaturedAlgoComponent.prototype.getRandomColor = function () {
+    FeaturedAlgoComponent.prototype._getRandomColor = function () {
         var hue = Math.floor(Math.random() * 719);
         var sat = Math.floor(Math.random() * 40);
         return "90deg, hsl(" + hue + ", " + (sat + 20) + "%, 70%), hsl(" + hue + ", " + (sat + 60) + "%, 60%)";
+    };
+    FeaturedAlgoComponent.prototype.navigate = function (name) {
+        this.router.navigate(['/algorithm', name]);
     };
     FeaturedAlgoComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -587,7 +636,7 @@ var FeaturedAlgoComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./featured-algo.component.html */ "./src/app/home/featured-algo/featured-algo.component.html"),
             styles: [__webpack_require__(/*! ./featured-algo.component.css */ "./src/app/home/featured-algo/featured-algo.component.css")]
         }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [apollo_angular__WEBPACK_IMPORTED_MODULE_3__["Apollo"]])
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [apollo_angular__WEBPACK_IMPORTED_MODULE_3__["Apollo"], _angular_router__WEBPACK_IMPORTED_MODULE_5__["Router"]])
     ], FeaturedAlgoComponent);
     return FeaturedAlgoComponent;
 }());
@@ -604,7 +653,7 @@ var templateObject_1;
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "app-categories, app-featured-algo {\r\n  padding: 8px 0;\r\n  border-bottom: 1px solid #cfd8dc;\r\n  display: block;\r\n}\r\n\r\n.center {\r\n  text-align: center;\r\n}\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvaG9tZS9ob21lLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxjQUFjO0VBQ2QsZ0NBQWdDO0VBQ2hDLGNBQWM7QUFDaEI7O0FBRUE7RUFDRSxrQkFBa0I7QUFDcEIiLCJmaWxlIjoic3JjL2FwcC9ob21lL2hvbWUuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbImFwcC1jYXRlZ29yaWVzLCBhcHAtZmVhdHVyZWQtYWxnbyB7XHJcbiAgcGFkZGluZzogOHB4IDA7XHJcbiAgYm9yZGVyLWJvdHRvbTogMXB4IHNvbGlkICNjZmQ4ZGM7XHJcbiAgZGlzcGxheTogYmxvY2s7XHJcbn1cclxuXHJcbi5jZW50ZXIge1xyXG4gIHRleHQtYWxpZ246IGNlbnRlcjtcclxufSJdfQ== */"
+module.exports = "app-categories, app-featured-algo {\r\n  padding: 8px 0;\r\n  border-bottom: 1px solid #cfd8dc;\r\n  display: block;\r\n}\r\n\r\n.center {\r\n  text-align: center;\r\n}\r\n\r\n.search-bar-container {\r\n  text-align: center;\r\n}\r\n\r\n.search-bar {\r\n  min-width: 150px;\r\n  max-width: 500px;\r\n  width: 100%;\r\n}\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvaG9tZS9ob21lLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxjQUFjO0VBQ2QsZ0NBQWdDO0VBQ2hDLGNBQWM7QUFDaEI7O0FBRUE7RUFDRSxrQkFBa0I7QUFDcEI7O0FBRUE7RUFDRSxrQkFBa0I7QUFDcEI7O0FBRUE7RUFDRSxnQkFBZ0I7RUFDaEIsZ0JBQWdCO0VBQ2hCLFdBQVc7QUFDYiIsImZpbGUiOiJzcmMvYXBwL2hvbWUvaG9tZS5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiYXBwLWNhdGVnb3JpZXMsIGFwcC1mZWF0dXJlZC1hbGdvIHtcclxuICBwYWRkaW5nOiA4cHggMDtcclxuICBib3JkZXItYm90dG9tOiAxcHggc29saWQgI2NmZDhkYztcclxuICBkaXNwbGF5OiBibG9jaztcclxufVxyXG5cclxuLmNlbnRlciB7XHJcbiAgdGV4dC1hbGlnbjogY2VudGVyO1xyXG59XHJcblxyXG4uc2VhcmNoLWJhci1jb250YWluZXIge1xyXG4gIHRleHQtYWxpZ246IGNlbnRlcjtcclxufVxyXG5cclxuLnNlYXJjaC1iYXIge1xyXG4gIG1pbi13aWR0aDogMTUwcHg7XHJcbiAgbWF4LXdpZHRoOiA1MDBweDtcclxuICB3aWR0aDogMTAwJTtcclxufSJdfQ== */"
 
 /***/ }),
 
@@ -615,7 +664,7 @@ module.exports = "app-categories, app-featured-algo {\r\n  padding: 8px 0;\r\n  
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\">\n  <div class=\"center\">\n    <h1>ALGO DS</h1>\n  </div>\n  <app-categories></app-categories>\n  <app-featured-algo></app-featured-algo>\n</div>\n"
+module.exports = "<div class=\"container\">\r\n  <div class=\"center\">\r\n    <h1>ALGO DS</h1>\r\n  </div>\r\n\r\n  <!-- search bar -->\r\n  <div class=\"search-bar-container\">\r\n    <mat-form-field class=\"search-bar\">\r\n      <input type=\"text\" placeholder=\"Search Algorithm\" matInput [formControl]=\"searchBar\" [matAutocomplete]=\"auto\" />\r\n      <mat-autocomplete #auto=\"matAutocomplete\" autoActiveFirstOption>\r\n        <mat-option *ngFor=\"let option of filteredOptions | async\" [value]=\"option\" (click)=\"clicked(option)\">\r\n          {{ option | replace: '_':' ' }}\r\n        </mat-option>\r\n      </mat-autocomplete>\r\n      <mat-icon matSuffix>search</mat-icon>\r\n    </mat-form-field>\r\n  </div>\r\n\r\n  <app-categories></app-categories>\r\n  <app-featured-algo></app-featured-algo>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -631,12 +680,50 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HomeComponent", function() { return HomeComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm5/operators/index.js");
+/* harmony import */ var apollo_angular__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! apollo-angular */ "./node_modules/apollo-angular/fesm5/ng.apollo.js");
+/* harmony import */ var graphql_tag__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! graphql-tag */ "./node_modules/graphql-tag/src/index.js");
+/* harmony import */ var graphql_tag__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(graphql_tag__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+
+
+
+
+
 
 
 var HomeComponent = /** @class */ (function () {
-    function HomeComponent() {
+    function HomeComponent(apollo, router) {
+        this.apollo = apollo;
+        this.router = router;
+        this.searchBar = new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormControl"]();
     }
     HomeComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        // Get all algorithms and fill their names in options
+        // options is used for dropdown
+        this.apollo
+            .watchQuery({
+            query: graphql_tag__WEBPACK_IMPORTED_MODULE_4___default()(templateObject_1 || (templateObject_1 = tslib__WEBPACK_IMPORTED_MODULE_0__["__makeTemplateObject"](["\n          {\n            allAlgorithms {\n              name\n            }\n          }\n        "], ["\n          {\n            allAlgorithms {\n              name\n            }\n          }\n        "])))
+        })
+            .valueChanges.subscribe(function (result) {
+            var res = result.data;
+            _this.algorithms = res.allAlgorithms;
+            _this.options = _this.algorithms.map(function (algorithm) { return algorithm.name; });
+            // Copied from: Angular material -> autocomplete
+            _this.filteredOptions = _this.searchBar.valueChanges.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["startWith"])(''), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (value) { return _this._filter(value); }));
+        });
+    };
+    // when clicked on any option, route to that algorithm
+    HomeComponent.prototype.clicked = function (option) {
+        this.router.navigate(['/algorithm', option]);
+    };
+    // filter dropdown options in searchbar
+    // Copied from: Angular material -> autocomplete
+    HomeComponent.prototype._filter = function (value) {
+        var filterValue = value.toLowerCase();
+        return this.options.filter(function (option) { return option.toLowerCase().includes(filterValue); }).slice(0, 20);
     };
     HomeComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -644,11 +731,12 @@ var HomeComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./home.component.html */ "./src/app/home/home.component.html"),
             styles: [__webpack_require__(/*! ./home.component.css */ "./src/app/home/home.component.css")]
         }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [apollo_angular__WEBPACK_IMPORTED_MODULE_3__["Apollo"], _angular_router__WEBPACK_IMPORTED_MODULE_6__["Router"]])
     ], HomeComponent);
     return HomeComponent;
 }());
 
+var templateObject_1;
 
 
 /***/ }),
