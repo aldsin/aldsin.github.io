@@ -11,10 +11,18 @@ import { Category } from 'src/app/models/category.model';
 export class CategoriesComponent implements OnInit {
   categories: Category[];
   topCategories: Category[];
+  moreCategories = false;
 
   constructor(private apollo: Apollo) {}
 
   ngOnInit() {
+    // If algorithms are present in localstorage,
+    // Then get them first and then wait for the query to get items
+    if (localStorage.getItem('allCategories')) {
+      this.categories = JSON.parse(localStorage.getItem('allCategories'));
+      this.changeCategoryView(this.moreCategories);
+    }
+
     // Get allCategories and display
     // initially display top 4 categories only
     this.apollo
@@ -32,16 +40,19 @@ export class CategoriesComponent implements OnInit {
       .valueChanges.subscribe(result => {
         const res = result.data as { allCategories: Category[] };
         this.categories = res.allCategories;
-        this.topCategories = this.categories.slice(0, 4);
+        localStorage.setItem('allCategories', JSON.stringify(this.categories));
+        this.changeCategoryView(this.moreCategories);
       });
   }
 
-  // when More/Less button is clicked, then display categories accordingly
+  // displays topCategories/allCategories
   changeCategoryView(isMoreNeeded: boolean) {
     if (isMoreNeeded) {
       this.topCategories = this.categories.slice();
+      this.moreCategories = true;
     } else {
       this.topCategories = this.categories.slice(0, 4);
+      this.moreCategories = false;
     }
   }
 }

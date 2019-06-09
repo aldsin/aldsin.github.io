@@ -405,7 +405,7 @@ var GraphQLModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".row-category,\r\n.col-category {\r\n  display: flex;\r\n  flex-wrap: wrap;\r\n}\r\n\r\n.col-category {\r\n  width: 25%;\r\n  padding: 1%;\r\n  display: flex;\r\n}\r\n\r\n.col-category:nth-child(4n + 1) {\r\n  padding-left: 0;\r\n}\r\n\r\n.col-category:nth-child(4n) {\r\n  padding-right: 0;\r\n}\r\n\r\napp-category {\r\n  height: 100%;\r\n  width: 100%;\r\n}\r\n\r\n.spacer {\r\n  flex: 1 1 auto;\r\n}\r\n\r\nmat-toolbar-row button {\r\n  width: 90px;\r\n}\r\n\r\n@media (max-width: 610px) {\r\n  .col-category {\r\n    width: 50%;\r\n  }\r\n\r\n  .col-category:nth-child(odd) {\r\n    padding-left: 0;\r\n  }\r\n  .col-category:nth-child(even) {\r\n    padding-right: 0;\r\n  }\r\n}\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvaG9tZS9jYXRlZ29yaWVzL2NhdGVnb3JpZXMuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTs7RUFFRSxhQUFhO0VBQ2IsZUFBZTtBQUNqQjs7QUFFQTtFQUNFLFVBQVU7RUFDVixXQUFXO0VBQ1gsYUFBYTtBQUNmOztBQUVBO0VBQ0UsZUFBZTtBQUNqQjs7QUFDQTtFQUNFLGdCQUFnQjtBQUNsQjs7QUFFQTtFQUNFLFlBQVk7RUFDWixXQUFXO0FBQ2I7O0FBRUE7RUFDRSxjQUFjO0FBQ2hCOztBQUVBO0VBQ0UsV0FBVztBQUNiOztBQUVBO0VBQ0U7SUFDRSxVQUFVO0VBQ1o7O0VBRUE7SUFDRSxlQUFlO0VBQ2pCO0VBQ0E7SUFDRSxnQkFBZ0I7RUFDbEI7QUFDRiIsImZpbGUiOiJzcmMvYXBwL2hvbWUvY2F0ZWdvcmllcy9jYXRlZ29yaWVzLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIucm93LWNhdGVnb3J5LFxyXG4uY29sLWNhdGVnb3J5IHtcclxuICBkaXNwbGF5OiBmbGV4O1xyXG4gIGZsZXgtd3JhcDogd3JhcDtcclxufVxyXG5cclxuLmNvbC1jYXRlZ29yeSB7XHJcbiAgd2lkdGg6IDI1JTtcclxuICBwYWRkaW5nOiAxJTtcclxuICBkaXNwbGF5OiBmbGV4O1xyXG59XHJcblxyXG4uY29sLWNhdGVnb3J5Om50aC1jaGlsZCg0biArIDEpIHtcclxuICBwYWRkaW5nLWxlZnQ6IDA7XHJcbn1cclxuLmNvbC1jYXRlZ29yeTpudGgtY2hpbGQoNG4pIHtcclxuICBwYWRkaW5nLXJpZ2h0OiAwO1xyXG59XHJcblxyXG5hcHAtY2F0ZWdvcnkge1xyXG4gIGhlaWdodDogMTAwJTtcclxuICB3aWR0aDogMTAwJTtcclxufVxyXG5cclxuLnNwYWNlciB7XHJcbiAgZmxleDogMSAxIGF1dG87XHJcbn1cclxuXHJcbm1hdC10b29sYmFyLXJvdyBidXR0b24ge1xyXG4gIHdpZHRoOiA5MHB4O1xyXG59XHJcblxyXG5AbWVkaWEgKG1heC13aWR0aDogNjEwcHgpIHtcclxuICAuY29sLWNhdGVnb3J5IHtcclxuICAgIHdpZHRoOiA1MCU7XHJcbiAgfVxyXG5cclxuICAuY29sLWNhdGVnb3J5Om50aC1jaGlsZChvZGQpIHtcclxuICAgIHBhZGRpbmctbGVmdDogMDtcclxuICB9XHJcbiAgLmNvbC1jYXRlZ29yeTpudGgtY2hpbGQoZXZlbikge1xyXG4gICAgcGFkZGluZy1yaWdodDogMDtcclxuICB9XHJcbn1cclxuIl19 */"
+module.exports = "mat-spinner {\r\n  margin: auto;\r\n}\r\n\r\n.row-category,\r\n.col-category {\r\n  display: flex;\r\n  flex-wrap: wrap;\r\n}\r\n\r\n.col-category {\r\n  width: 25%;\r\n  padding: 1%;\r\n  display: flex;\r\n}\r\n\r\n.col-category:nth-child(4n + 1) {\r\n  padding-left: 0;\r\n}\r\n\r\n.col-category:nth-child(4n) {\r\n  padding-right: 0;\r\n}\r\n\r\napp-category {\r\n  height: 100%;\r\n  width: 100%;\r\n}\r\n\r\n.spacer {\r\n  flex: 1 1 auto;\r\n}\r\n\r\nmat-toolbar-row button {\r\n  width: 90px;\r\n}\r\n\r\n@media (max-width: 610px) {\r\n  .col-category {\r\n    width: 50%;\r\n  }\r\n\r\n  .col-category:nth-child(odd) {\r\n    padding-left: 0;\r\n  }\r\n  .col-category:nth-child(even) {\r\n    padding-right: 0;\r\n  }\r\n}\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvaG9tZS9jYXRlZ29yaWVzL2NhdGVnb3JpZXMuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLFlBQVk7QUFDZDs7QUFFQTs7RUFFRSxhQUFhO0VBQ2IsZUFBZTtBQUNqQjs7QUFFQTtFQUNFLFVBQVU7RUFDVixXQUFXO0VBQ1gsYUFBYTtBQUNmOztBQUVBO0VBQ0UsZUFBZTtBQUNqQjs7QUFDQTtFQUNFLGdCQUFnQjtBQUNsQjs7QUFFQTtFQUNFLFlBQVk7RUFDWixXQUFXO0FBQ2I7O0FBRUE7RUFDRSxjQUFjO0FBQ2hCOztBQUVBO0VBQ0UsV0FBVztBQUNiOztBQUVBO0VBQ0U7SUFDRSxVQUFVO0VBQ1o7O0VBRUE7SUFDRSxlQUFlO0VBQ2pCO0VBQ0E7SUFDRSxnQkFBZ0I7RUFDbEI7QUFDRiIsImZpbGUiOiJzcmMvYXBwL2hvbWUvY2F0ZWdvcmllcy9jYXRlZ29yaWVzLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyJtYXQtc3Bpbm5lciB7XHJcbiAgbWFyZ2luOiBhdXRvO1xyXG59XHJcblxyXG4ucm93LWNhdGVnb3J5LFxyXG4uY29sLWNhdGVnb3J5IHtcclxuICBkaXNwbGF5OiBmbGV4O1xyXG4gIGZsZXgtd3JhcDogd3JhcDtcclxufVxyXG5cclxuLmNvbC1jYXRlZ29yeSB7XHJcbiAgd2lkdGg6IDI1JTtcclxuICBwYWRkaW5nOiAxJTtcclxuICBkaXNwbGF5OiBmbGV4O1xyXG59XHJcblxyXG4uY29sLWNhdGVnb3J5Om50aC1jaGlsZCg0biArIDEpIHtcclxuICBwYWRkaW5nLWxlZnQ6IDA7XHJcbn1cclxuLmNvbC1jYXRlZ29yeTpudGgtY2hpbGQoNG4pIHtcclxuICBwYWRkaW5nLXJpZ2h0OiAwO1xyXG59XHJcblxyXG5hcHAtY2F0ZWdvcnkge1xyXG4gIGhlaWdodDogMTAwJTtcclxuICB3aWR0aDogMTAwJTtcclxufVxyXG5cclxuLnNwYWNlciB7XHJcbiAgZmxleDogMSAxIGF1dG87XHJcbn1cclxuXHJcbm1hdC10b29sYmFyLXJvdyBidXR0b24ge1xyXG4gIHdpZHRoOiA5MHB4O1xyXG59XHJcblxyXG5AbWVkaWEgKG1heC13aWR0aDogNjEwcHgpIHtcclxuICAuY29sLWNhdGVnb3J5IHtcclxuICAgIHdpZHRoOiA1MCU7XHJcbiAgfVxyXG5cclxuICAuY29sLWNhdGVnb3J5Om50aC1jaGlsZChvZGQpIHtcclxuICAgIHBhZGRpbmctbGVmdDogMDtcclxuICB9XHJcbiAgLmNvbC1jYXRlZ29yeTpudGgtY2hpbGQoZXZlbikge1xyXG4gICAgcGFkZGluZy1yaWdodDogMDtcclxuICB9XHJcbn1cclxuIl19 */"
 
 /***/ }),
 
@@ -416,7 +416,7 @@ module.exports = ".row-category,\r\n.col-category {\r\n  display: flex;\r\n  fle
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<!-- Categories header -->\r\n<mat-toolbar>\r\n  <mat-toolbar-row>\r\n    <span>Categories</span>\r\n    <span class=\"spacer\"></span>\r\n    <button\r\n      mat-raised-button\r\n      color=\"primary\"\r\n      (click)=\"changeCategoryView(true)\"\r\n      *ngIf=\"!moreCategories && filteredCategories && filteredCategories.length > 4\"\r\n    >\r\n      More<mat-icon>expand_more</mat-icon>\r\n    </button>\r\n    <button\r\n      mat-raised-button\r\n      color=\"primary\"\r\n      (click)=\"changeCategoryView(false)\"\r\n      *ngIf=\"moreCategories && filteredCategories && filteredCategories.length > 4\"\r\n    >\r\n      Less<mat-icon>expand_less</mat-icon>\r\n    </button>\r\n  </mat-toolbar-row>\r\n</mat-toolbar>\r\n\r\n<!-- Categories -->\r\n<div class=\"row-category\">\r\n  <div class=\"col-category\" *ngFor=\"let category of topCategories; let i = index\">\r\n    <app-category [category]=\"category\" [index]=\"i\"></app-category>\r\n  </div>\r\n</div>\r\n"
+module.exports = "<!-- Categories header -->\r\n<mat-toolbar>\r\n  <mat-toolbar-row>\r\n    <span>Categories</span>\r\n    <span class=\"spacer\"></span>\r\n    <button\r\n      mat-raised-button\r\n      color=\"primary\"\r\n      (click)=\"changeCategoryView(true)\"\r\n      *ngIf=\"!moreCategories && filteredCategories && filteredCategories.length > 4\"\r\n    >\r\n      More<mat-icon>expand_more</mat-icon>\r\n    </button>\r\n    <button\r\n      mat-raised-button\r\n      color=\"primary\"\r\n      (click)=\"changeCategoryView(false)\"\r\n      *ngIf=\"moreCategories && filteredCategories && filteredCategories.length > 4\"\r\n    >\r\n      Less<mat-icon>expand_less</mat-icon>\r\n    </button>\r\n  </mat-toolbar-row>\r\n</mat-toolbar>\r\n\r\n<!-- Categories -->\r\n<div class=\"row-category\">\r\n  <mat-spinner *ngIf=\"!topCategories\"></mat-spinner>\r\n  <div class=\"col-category\" *ngFor=\"let category of topCategories; let i = index\">\r\n    <app-category [category]=\"category\" [index]=\"i\"></app-category>\r\n  </div>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -442,9 +442,16 @@ __webpack_require__.r(__webpack_exports__);
 var CategoriesComponent = /** @class */ (function () {
     function CategoriesComponent(apollo) {
         this.apollo = apollo;
+        this.moreCategories = false;
     }
     CategoriesComponent.prototype.ngOnInit = function () {
         var _this = this;
+        // If algorithms are present in localstorage,
+        // Then get them first and then wait for the query to get items
+        if (localStorage.getItem('allCategories')) {
+            this.categories = JSON.parse(localStorage.getItem('allCategories'));
+            this.changeCategoryView(this.moreCategories);
+        }
         // Get allCategories and display
         // initially display top 4 categories only
         this.apollo
@@ -454,16 +461,19 @@ var CategoriesComponent = /** @class */ (function () {
             .valueChanges.subscribe(function (result) {
             var res = result.data;
             _this.categories = res.allCategories;
-            _this.topCategories = _this.categories.slice(0, 4);
+            localStorage.setItem('allCategories', JSON.stringify(_this.categories));
+            _this.changeCategoryView(_this.moreCategories);
         });
     };
-    // when More/Less button is clicked, then display categories accordingly
+    // displays topCategories/allCategories
     CategoriesComponent.prototype.changeCategoryView = function (isMoreNeeded) {
         if (isMoreNeeded) {
             this.topCategories = this.categories.slice();
+            this.moreCategories = true;
         }
         else {
             this.topCategories = this.categories.slice(0, 4);
+            this.moreCategories = false;
         }
     };
     CategoriesComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
@@ -563,7 +573,7 @@ var CategoryComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "mat-card {\r\n  margin: 8px 0;\r\n}\r\n\r\nmat-toolbar {\r\n  padding-top: 8px;\r\n}\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvaG9tZS9mZWF0dXJlZC1hbGdvL2ZlYXR1cmVkLWFsZ28uY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLGFBQWE7QUFDZjs7QUFFQTtFQUNFLGdCQUFnQjtBQUNsQiIsImZpbGUiOiJzcmMvYXBwL2hvbWUvZmVhdHVyZWQtYWxnby9mZWF0dXJlZC1hbGdvLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyJtYXQtY2FyZCB7XHJcbiAgbWFyZ2luOiA4cHggMDtcclxufVxyXG5cclxubWF0LXRvb2xiYXIge1xyXG4gIHBhZGRpbmctdG9wOiA4cHg7XHJcbn0iXX0= */"
+module.exports = "mat-card {\r\n  margin: 8px 0;\r\n}\r\n\r\nmat-toolbar {\r\n  padding-top: 8px;\r\n}\r\n\r\nmat-spinner {\r\n  margin: auto;\r\n}\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvaG9tZS9mZWF0dXJlZC1hbGdvL2ZlYXR1cmVkLWFsZ28uY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLGFBQWE7QUFDZjs7QUFFQTtFQUNFLGdCQUFnQjtBQUNsQjs7QUFFQTtFQUNFLFlBQVk7QUFDZCIsImZpbGUiOiJzcmMvYXBwL2hvbWUvZmVhdHVyZWQtYWxnby9mZWF0dXJlZC1hbGdvLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyJtYXQtY2FyZCB7XHJcbiAgbWFyZ2luOiA4cHggMDtcclxufVxyXG5cclxubWF0LXRvb2xiYXIge1xyXG4gIHBhZGRpbmctdG9wOiA4cHg7XHJcbn1cclxuXHJcbm1hdC1zcGlubmVyIHtcclxuICBtYXJnaW46IGF1dG87XHJcbn1cclxuIl19 */"
 
 /***/ }),
 
@@ -574,7 +584,7 @@ module.exports = "mat-card {\r\n  margin: 8px 0;\r\n}\r\n\r\nmat-toolbar {\r\n  
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<mat-toolbar>\r\n  <mat-toolbar-row>\r\n    <span>Algorithm of the Day</span>\r\n  </mat-toolbar-row>\r\n</mat-toolbar>\r\n\r\n<mat-card class=\"mat-elevation-z3 featured\">\r\n  <mat-card-content *ngIf=\"featuredAlgo\">\r\n    <mat-card-title>{{ featuredAlgo.name | replace: '_':' ' }}</mat-card-title>\r\n    <p>\r\n      {{ featuredAlgo.description }}\r\n    </p>\r\n    <mat-chip-list aria-label=\"Fish selection\">\r\n      <mat-chip *ngFor=\"let lang of featuredAlgo.langs\" (click)=\"navigate(featuredAlgo.name)\">{{ lang.langName }}</mat-chip>\r\n    </mat-chip-list>\r\n  </mat-card-content>\r\n</mat-card>\r\n"
+module.exports = "<mat-toolbar>\r\n  <mat-toolbar-row>\r\n    <span>Algorithm of the Day</span>\r\n  </mat-toolbar-row>\r\n</mat-toolbar>\r\n\r\n<mat-card class=\"mat-elevation-z3 featured\">\r\n  <mat-card-content *ngIf=\"!featuredAlgo\">\r\n    <mat-spinner></mat-spinner>\r\n  </mat-card-content>\r\n\r\n  <mat-card-content *ngIf=\"featuredAlgo\">\r\n    <mat-card-title>{{ featuredAlgo.name | replace: '_':' ' }}</mat-card-title>\r\n    <p>\r\n      {{ featuredAlgo.description }}\r\n    </p>\r\n    <mat-chip-list aria-label=\"Fish selection\">\r\n      <mat-chip *ngFor=\"let lang of featuredAlgo.langs\" (click)=\"navigate(featuredAlgo.name)\">{{ lang.langName }}</mat-chip>\r\n    </mat-chip-list>\r\n  </mat-card-content>\r\n</mat-card>\r\n"
 
 /***/ }),
 
@@ -616,7 +626,6 @@ var FeaturedAlgoComponent = /** @class */ (function () {
             .valueChanges.subscribe(function (result) {
             var res = result.data;
             _this.featuredAlgo = res.codeOfTheDay[0];
-            console.log(_this.featuredAlgo);
         });
     };
     FeaturedAlgoComponent.prototype.ngAfterViewInit = function () {
@@ -664,7 +673,7 @@ module.exports = "app-categories, app-featured-algo {\r\n  padding: 8px 0;\r\n  
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\">\r\n  <div class=\"center\">\r\n    <h1>ALGO DS</h1>\r\n  </div>\r\n\r\n  <!-- search bar -->\r\n  <div class=\"search-bar-container\">\r\n    <mat-form-field class=\"search-bar\">\r\n      <input type=\"text\" placeholder=\"Search Algorithm\" matInput [formControl]=\"searchBar\" [matAutocomplete]=\"auto\" />\r\n      <mat-autocomplete #auto=\"matAutocomplete\" autoActiveFirstOption>\r\n        <mat-option *ngFor=\"let option of filteredOptions | async\" [value]=\"option\" (click)=\"clicked(option)\">\r\n          {{ option | replace: '_':' ' }}\r\n        </mat-option>\r\n      </mat-autocomplete>\r\n      <mat-icon matSuffix>search</mat-icon>\r\n    </mat-form-field>\r\n  </div>\r\n\r\n  <app-categories></app-categories>\r\n  <app-featured-algo></app-featured-algo>\r\n</div>\r\n"
+module.exports = "<div class=\"container\">\r\n  <div class=\"center\">\r\n    <h1>ALGO DS</h1>\r\n  </div>\r\n\r\n  <!-- search bar -->\r\n  <div class=\"search-bar-container\">\r\n    <mat-form-field class=\"search-bar\">\r\n      <input type=\"text\" placeholder=\"Search Algorithm\" matInput [formControl]=\"searchBar\" [matAutocomplete]=\"auto\" />\r\n      <mat-autocomplete #auto=\"matAutocomplete\" autoActiveFirstOption (optionSelected)=\"selected($event.option.value)\">\r\n        <mat-option *ngFor=\"let option of filteredOptions | async\" [value]=\"option\">\r\n          {{ option | replace: '_':' ' }}\r\n        </mat-option>\r\n      </mat-autocomplete>\r\n      <mat-icon matSuffix>search</mat-icon>\r\n    </mat-form-field>\r\n  </div>\r\n\r\n  <app-categories></app-categories>\r\n  <app-featured-algo></app-featured-algo>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -701,6 +710,12 @@ var HomeComponent = /** @class */ (function () {
     }
     HomeComponent.prototype.ngOnInit = function () {
         var _this = this;
+        // If algorithms are present in localstorage,
+        // Then get them first and then wait for the query to get items
+        if (localStorage.getItem('allAlgorithms')) {
+            this.algorithms = JSON.parse(localStorage.getItem('allAlgorithms'));
+            this.setupOptions(this.algorithms);
+        }
         // Get all algorithms and fill their names in options
         // options is used for dropdown
         this.apollo
@@ -710,13 +725,19 @@ var HomeComponent = /** @class */ (function () {
             .valueChanges.subscribe(function (result) {
             var res = result.data;
             _this.algorithms = res.allAlgorithms;
-            _this.options = _this.algorithms.map(function (algorithm) { return algorithm.name; });
-            // Copied from: Angular material -> autocomplete
-            _this.filteredOptions = _this.searchBar.valueChanges.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["startWith"])(''), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (value) { return _this._filter(value); }));
+            localStorage.setItem('allAlgorithms', JSON.stringify(_this.algorithms));
+            _this.setupOptions(_this.algorithms);
         });
     };
+    // setup options for dropdown
+    HomeComponent.prototype.setupOptions = function (algorithms) {
+        var _this = this;
+        this.options = algorithms.map(function (algorithm) { return algorithm.name; });
+        // Copied from: Angular material -> autocomplete
+        this.filteredOptions = this.searchBar.valueChanges.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["startWith"])(''), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (value) { return _this._filter(value); }));
+    };
     // when clicked on any option, route to that algorithm
-    HomeComponent.prototype.clicked = function (option) {
+    HomeComponent.prototype.selected = function (option) {
         this.router.navigate(['/algorithm', option]);
     };
     // filter dropdown options in searchbar

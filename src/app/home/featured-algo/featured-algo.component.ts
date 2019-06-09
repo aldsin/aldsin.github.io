@@ -3,7 +3,7 @@ import * as $ from 'jquery';
 import { Algorithm } from 'src/app/models/algorithm.model';
 import { Apollo } from 'apollo-angular';
 import gql from 'graphql-tag';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-featured-algo',
@@ -33,7 +33,6 @@ export class FeaturedAlgoComponent implements OnInit, AfterViewInit {
       .valueChanges.subscribe(result => {
         const res = result.data as { codeOfTheDay: Algorithm[] };
         this.featuredAlgo = res.codeOfTheDay[0];
-        console.log(this.featuredAlgo);
       });
   }
 

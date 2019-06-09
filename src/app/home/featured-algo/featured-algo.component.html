@@ -5,6 +5,10 @@
 </mat-toolbar>
 
 <mat-card class="mat-elevation-z3 featured">
+  <mat-card-content *ngIf="!featuredAlgo">
+    <mat-spinner></mat-spinner>
+  </mat-card-content>
+
   <mat-card-content *ngIf="featuredAlgo">
     <mat-card-title>{{ featuredAlgo.name | replace: '_':' ' }}</mat-card-title>
     <p>
