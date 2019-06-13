@@ -454,6 +454,10 @@ var CategoryComponent = /** @class */ (function () {
     function CategoryComponent() {
     }
     CategoryComponent.prototype.ngOnInit = function () { };
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Object)
+    ], CategoryComponent.prototype, "category", void 0);
     CategoryComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'app-category',
