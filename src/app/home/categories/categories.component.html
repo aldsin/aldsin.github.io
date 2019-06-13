@@ -25,7 +25,7 @@
 <!-- Categories -->
 <div class="row-category">
   <mat-spinner *ngIf="!topCategories"></mat-spinner>
-  <div class="col-category" *ngFor="let category of topCategories; let i = index">
-    <app-category [category]="category" [index]="i"></app-category>
+  <div class="col-category" *ngFor="let category of topCategories">
+    <app-category [category]="category"></app-category>
   </div>
 </div>

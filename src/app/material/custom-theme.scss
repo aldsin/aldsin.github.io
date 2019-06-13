@@ -1,0 +1,10 @@
+@import "./style-theme.scss";
+
+$light-primary: mat-palette($mat-blue);
+$light-accent: mat-palette($mat-green);
+
+// Make dark theme colours here
+
+$default-theme: mat-light-theme($light-primary, $light-accent);
+@include style-theme($default-theme);
+@include angular-material-theme($default-theme);
