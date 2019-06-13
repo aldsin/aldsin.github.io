@@ -5,3 +5,7 @@ mat-card {
 mat-toolbar {
   padding-top: 8px;
 }
+
+mat-spinner {
+  margin: auto;
+}

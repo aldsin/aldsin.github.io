@@ -21,6 +21,13 @@ export class HomeComponent implements OnInit {
   constructor(private apollo: Apollo, private router: Router) {}
 
   ngOnInit() {
+    // If algorithms are present in localstorage,
+    // Then get them first and then wait for the query to get items
+    if (localStorage.getItem('allAlgorithms')) {
+      this.algorithms = JSON.parse(localStorage.getItem('allAlgorithms'));
+      this.setupOptions(this.algorithms);
+    }
+
     // Get all algorithms and fill their names in options
     // options is used for dropdown
     this.apollo
@@ -36,18 +43,25 @@ export class HomeComponent implements OnInit {
       .valueChanges.subscribe(result => {
         const res = result.data as { allAlgorithms: Algorithm[] };
         this.algorithms = res.allAlgorithms;
-        this.options = this.algorithms.map(algorithm => algorithm.name);
+        localStorage.setItem('allAlgorithms', JSON.stringify(this.algorithms));
 
-        // Copied from: Angular material -> autocomplete
-        this.filteredOptions = this.searchBar.valueChanges.pipe(
-          startWith(''),
-          map(value => this._filter(value))
-        );
+        this.setupOptions(this.algorithms);
       });
   }
 
+  // setup options for dropdown
+  setupOptions(algorithms) {
+    this.options = algorithms.map(algorithm => algorithm.name);
+
+    // Copied from: Angular material -> autocomplete
+    this.filteredOptions = this.searchBar.valueChanges.pipe(
+      startWith(''),
+      map(value => this._filter(value))
+    );
+  }
+
   // when clicked on any option, route to that algorithm
-  clicked(option) {
+  selected(option) {
     this.router.navigate(['/algorithm', option]);
   }
 
