@@ -174,84 +174,6 @@ var AppComponent = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "./src/app/app.material.module.ts":
-/*!****************************************!*\
-  !*** ./src/app/app.material.module.ts ***!
-  \****************************************/
-/*! exports provided: AppMaterialModule */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AppMaterialModule", function() { return AppMaterialModule; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
-
-
-
-var AppMaterialModule = /** @class */ (function () {
-    function AppMaterialModule() {
-    }
-    AppMaterialModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
-            imports: [
-                _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatAutocompleteModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatButtonModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatCheckboxModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatToolbarModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatChipsModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatOptionModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatGridListModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatProgressBarModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatSliderModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatSlideToggleModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatMenuModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatDialogModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatSnackBarModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatSelectModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatInputModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatSidenavModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatCardModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatIconModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatRadioModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatProgressSpinnerModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatTabsModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatListModule"]
-            ],
-            exports: [
-                _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatAutocompleteModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatButtonModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatCheckboxModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatToolbarModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatChipsModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatOptionModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatGridListModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatProgressBarModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatSliderModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatSlideToggleModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatMenuModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatDialogModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatSnackBarModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatSelectModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatInputModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatSidenavModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatCardModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatIconModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatRadioModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatProgressSpinnerModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatTabsModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatListModule"]
-            ]
-        })
-    ], AppMaterialModule);
-    return AppMaterialModule;
-}());
-
-
-
-/***/ }),
-
 /***/ "./src/app/app.module.ts":
 /*!*******************************!*\
   !*** ./src/app/app.module.ts ***!
@@ -267,7 +189,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./app-routing.module */ "./src/app/app-routing.module.ts");
 /* harmony import */ var _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/platform-browser/animations */ "./node_modules/@angular/platform-browser/fesm5/animations.js");
-/* harmony import */ var _app_material_module__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./app.material.module */ "./src/app/app.material.module.ts");
+/* harmony import */ var _material_app_material_module__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./material/app.material.module */ "./src/app/material/app.material.module.ts");
 /* harmony import */ var _graphql_module__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./graphql.module */ "./src/app/graphql.module.ts");
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
 /* harmony import */ var apollo_angular__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! apollo-angular */ "./node_modules/apollo-angular/fesm5/ng.apollo.js");
@@ -318,7 +240,7 @@ var AppModule = /** @class */ (function () {
                 _angular_forms__WEBPACK_IMPORTED_MODULE_9__["ReactiveFormsModule"],
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
                 _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_4__["BrowserAnimationsModule"],
-                _app_material_module__WEBPACK_IMPORTED_MODULE_5__["AppMaterialModule"],
+                _material_app_material_module__WEBPACK_IMPORTED_MODULE_5__["AppMaterialModule"],
                 _graphql_module__WEBPACK_IMPORTED_MODULE_6__["GraphQLModule"],
                 _angular_common_http__WEBPACK_IMPORTED_MODULE_7__["HttpClientModule"],
                 apollo_angular__WEBPACK_IMPORTED_MODULE_8__["ApolloModule"],
@@ -416,7 +338,7 @@ module.exports = ".row-category,\r\n.col-category {\r\n  display: flex;\r\n  fle
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<!-- Categories header -->\r\n<mat-toolbar>\r\n  <mat-toolbar-row>\r\n    <span>Categories</span>\r\n    <span class=\"spacer\"></span>\r\n    <button\r\n      mat-raised-button\r\n      color=\"primary\"\r\n      (click)=\"changeCategoryView(true)\"\r\n      *ngIf=\"!moreCategories && filteredCategories && filteredCategories.length > 4\"\r\n    >\r\n      More<mat-icon>expand_more</mat-icon>\r\n    </button>\r\n    <button\r\n      mat-raised-button\r\n      color=\"primary\"\r\n      (click)=\"changeCategoryView(false)\"\r\n      *ngIf=\"moreCategories && filteredCategories && filteredCategories.length > 4\"\r\n    >\r\n      Less<mat-icon>expand_less</mat-icon>\r\n    </button>\r\n  </mat-toolbar-row>\r\n</mat-toolbar>\r\n\r\n<!-- Categories -->\r\n<div class=\"row-category\">\r\n  <div class=\"col-category\" *ngFor=\"let category of topCategories; let i = index\">\r\n    <app-category [category]=\"category\" [index]=\"i\"></app-category>\r\n  </div>\r\n</div>\r\n"
+module.exports = "<!-- Categories header -->\r\n<mat-toolbar>\r\n  <mat-toolbar-row>\r\n    <span>Categories</span>\r\n    <span class=\"spacer\"></span>\r\n    <button\r\n      mat-raised-button\r\n      color=\"primary\"\r\n      (click)=\"changeCategoryView(true)\"\r\n      *ngIf=\"!moreCategories && filteredCategories && filteredCategories.length > 4\"\r\n    >\r\n      More<mat-icon>expand_more</mat-icon>\r\n    </button>\r\n    <button\r\n      mat-raised-button\r\n      color=\"primary\"\r\n      (click)=\"changeCategoryView(false)\"\r\n      *ngIf=\"moreCategories && filteredCategories && filteredCategories.length > 4\"\r\n    >\r\n      Less<mat-icon>expand_less</mat-icon>\r\n    </button>\r\n  </mat-toolbar-row>\r\n</mat-toolbar>\r\n\r\n<!-- Categories -->\r\n<div class=\"row-category\">\r\n  <mat-spinner *ngIf=\"!topCategories\"></mat-spinner>\r\n  <div class=\"col-category\" *ngFor=\"let category of topCategories\">\r\n    <app-category [category]=\"category\"></app-category>\r\n  </div>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -500,7 +422,7 @@ module.exports = "mat-card {\r\n  height: 100%;\r\n}\r\n\r\n.card-content {\r\n 
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<mat-card class=\"mat-elevation-z3\" [ngClass]=\"'card-'+index\">\n  <mat-card-content>\n    <mat-card-title>{{ category.name }}</mat-card-title>\n    <p>\n      {{ category.description }}\n    </p>\n  </mat-card-content>\n</mat-card>\n"
+module.exports = "<mat-card class=\"mat-elevation-z3\" class=\"background primary\">\r\n  <mat-card-content>\r\n    <mat-card-title>{{ category.name }}</mat-card-title>\r\n    <p>\r\n      {{ category.description }}\r\n    </p>\r\n  </mat-card-content>\r\n</mat-card>\r\n"
 
 /***/ }),
 
@@ -516,31 +438,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CategoryComponent", function() { return CategoryComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
-/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_2__);
-
 
 
 var CategoryComponent = /** @class */ (function () {
     function CategoryComponent() {
     }
     CategoryComponent.prototype.ngOnInit = function () { };
-    CategoryComponent.prototype.ngAfterViewInit = function () {
-        jquery__WEBPACK_IMPORTED_MODULE_2__('.mat-card.card-' + this.index.toString()).css('background', "linear-gradient(" + this.getRandomColor() + ")");
-    };
-    CategoryComponent.prototype.getRandomColor = function () {
-        var hue = Math.floor(Math.random() * 719);
-        var sat = Math.floor(Math.random() * 40);
-        return "90deg, hsl(" + hue + ", " + (sat + 30) + "%, 70%), hsl(" + hue + ", " + (sat + 60) + "%, 60%)";
-    };
-    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Object)
-    ], CategoryComponent.prototype, "category", void 0);
-    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Number)
-    ], CategoryComponent.prototype, "index", void 0);
     CategoryComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'app-category',
@@ -574,7 +477,7 @@ module.exports = "mat-card {\r\n  margin: 8px 0;\r\n}\r\n\r\nmat-toolbar {\r\n  
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<mat-toolbar>\r\n  <mat-toolbar-row>\r\n    <span>Algorithm of the Day</span>\r\n  </mat-toolbar-row>\r\n</mat-toolbar>\r\n\r\n<mat-card class=\"mat-elevation-z3 featured\">\r\n  <mat-card-content *ngIf=\"featuredAlgo\">\r\n    <mat-card-title>{{ featuredAlgo.name | replace: '_':' ' }}</mat-card-title>\r\n    <p>\r\n      {{ featuredAlgo.description }}\r\n    </p>\r\n    <mat-chip-list aria-label=\"Fish selection\">\r\n      <mat-chip *ngFor=\"let lang of featuredAlgo.langs\" (click)=\"navigate(featuredAlgo.name)\">{{ lang.langName }}</mat-chip>\r\n    </mat-chip-list>\r\n  </mat-card-content>\r\n</mat-card>\r\n"
+module.exports = "<mat-toolbar>\r\n  <mat-toolbar-row>\r\n    <span>Algorithm of the Day</span>\r\n  </mat-toolbar-row>\r\n</mat-toolbar>\r\n\r\n<mat-card class=\"mat-elevation-z3 background accent\">\r\n  <mat-card-content *ngIf=\"!featuredAlgo\">\r\n    <mat-spinner></mat-spinner>\r\n  </mat-card-content>\r\n\r\n  <mat-card-content *ngIf=\"featuredAlgo\">\r\n    <mat-card-title>{{ featuredAlgo.name | replace: '_':' ' }}</mat-card-title>\r\n    <p>\r\n      {{ featuredAlgo.description }}\r\n    </p>\r\n    <mat-chip-list aria-label=\"Fish selection\">\r\n      <mat-chip *ngFor=\"let lang of featuredAlgo.langs\" (click)=\"navigate(featuredAlgo.name)\">{{ lang.langName }}</mat-chip>\r\n    </mat-chip-list>\r\n  </mat-card-content>\r\n</mat-card>\r\n"
 
 /***/ }),
 
@@ -590,13 +493,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FeaturedAlgoComponent", function() { return FeaturedAlgoComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
-/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var apollo_angular__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! apollo-angular */ "./node_modules/apollo-angular/fesm5/ng.apollo.js");
-/* harmony import */ var graphql_tag__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! graphql-tag */ "./node_modules/graphql-tag/src/index.js");
-/* harmony import */ var graphql_tag__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(graphql_tag__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-
+/* harmony import */ var apollo_angular__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! apollo-angular */ "./node_modules/apollo-angular/fesm5/ng.apollo.js");
+/* harmony import */ var graphql_tag__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! graphql-tag */ "./node_modules/graphql-tag/src/index.js");
+/* harmony import */ var graphql_tag__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(graphql_tag__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 
 
 
@@ -611,21 +511,12 @@ var FeaturedAlgoComponent = /** @class */ (function () {
         var _this = this;
         this.apollo
             .watchQuery({
-            query: graphql_tag__WEBPACK_IMPORTED_MODULE_4___default()(templateObject_1 || (templateObject_1 = tslib__WEBPACK_IMPORTED_MODULE_0__["__makeTemplateObject"](["\n          {\n            codeOfTheDay {\n              name\n              description\n              langs {\n                langName\n              }\n            }\n          }\n        "], ["\n          {\n            codeOfTheDay {\n              name\n              description\n              langs {\n                langName\n              }\n            }\n          }\n        "])))
+            query: graphql_tag__WEBPACK_IMPORTED_MODULE_3___default()(templateObject_1 || (templateObject_1 = tslib__WEBPACK_IMPORTED_MODULE_0__["__makeTemplateObject"](["\n          {\n            codeOfTheDay {\n              name\n              description\n              langs {\n                langName\n              }\n            }\n          }\n        "], ["\n          {\n            codeOfTheDay {\n              name\n              description\n              langs {\n                langName\n              }\n            }\n          }\n        "])))
         })
             .valueChanges.subscribe(function (result) {
             var res = result.data;
             _this.featuredAlgo = res.codeOfTheDay[0];
-            console.log(_this.featuredAlgo);
         });
-    };
-    FeaturedAlgoComponent.prototype.ngAfterViewInit = function () {
-        jquery__WEBPACK_IMPORTED_MODULE_2__('.featured').css('background', "linear-gradient(" + this._getRandomColor() + ")");
-    };
-    FeaturedAlgoComponent.prototype._getRandomColor = function () {
-        var hue = Math.floor(Math.random() * 719);
-        var sat = Math.floor(Math.random() * 40);
-        return "90deg, hsl(" + hue + ", " + (sat + 20) + "%, 70%), hsl(" + hue + ", " + (sat + 60) + "%, 60%)";
     };
     FeaturedAlgoComponent.prototype.navigate = function (name) {
         this.router.navigate(['/algorithm', name]);
@@ -636,7 +527,7 @@ var FeaturedAlgoComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./featured-algo.component.html */ "./src/app/home/featured-algo/featured-algo.component.html"),
             styles: [__webpack_require__(/*! ./featured-algo.component.css */ "./src/app/home/featured-algo/featured-algo.component.css")]
         }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [apollo_angular__WEBPACK_IMPORTED_MODULE_3__["Apollo"], _angular_router__WEBPACK_IMPORTED_MODULE_5__["Router"]])
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [apollo_angular__WEBPACK_IMPORTED_MODULE_2__["Apollo"], _angular_router__WEBPACK_IMPORTED_MODULE_4__["Router"]])
     ], FeaturedAlgoComponent);
     return FeaturedAlgoComponent;
 }());
@@ -737,6 +628,60 @@ var HomeComponent = /** @class */ (function () {
 }());
 
 var templateObject_1;
+
+
+/***/ }),
+
+/***/ "./src/app/material/app.material.module.ts":
+/*!*************************************************!*\
+  !*** ./src/app/material/app.material.module.ts ***!
+  \*************************************************/
+/*! exports provided: AppMaterialModule */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AppMaterialModule", function() { return AppMaterialModule; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
+
+
+
+var AppMaterialModule = /** @class */ (function () {
+    function AppMaterialModule() {
+    }
+    AppMaterialModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
+            exports: [
+                _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatAutocompleteModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatButtonModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatCheckboxModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatToolbarModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatChipsModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatOptionModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatGridListModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatProgressBarModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatSliderModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatSlideToggleModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatMenuModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatDialogModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatSnackBarModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatSelectModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatInputModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatSidenavModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatCardModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatIconModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatRadioModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatProgressSpinnerModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatTabsModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatListModule"]
+            ]
+        })
+    ], AppMaterialModule);
+    return AppMaterialModule;
+}());
+
 
 
 /***/ }),
